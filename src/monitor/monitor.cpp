@@ -17,20 +17,20 @@ Monitor::~Monitor() {
 
 bool Monitor::initialize() {
     vmi_init_error_t error_info; // Variable para capturar el error
-    vmi_instance_t vmi = NULL;
+    vmi_instance_t vmi = nullptr;
     vmi_mode_t mode; // Variable para el modo de acceso
-    uint64_t init_flags = VMI_INIT_DOMAINNAME; // Inicializar con el flag apropiado
+    constexpr uint64_t init_flags = VMI_INIT_DOMAINNAME; // Inicializar con el flag apropiado
     vmi_init_data_t init_data; // Estructura para datos de inicialización (ajusta según sea necesario)
-    std::string xmlFilePathStr = "/etc/libvirt/qemu/" + vm_name + ".xml";
+    const std::string xmlFilePathStr = "/etc/libvirt/qemu/" + vm_name + ".xml";
     const char *xmlFilePath = xmlFilePathStr.c_str();
 
     // Determina el modo de acceso
-    status_t access_status = vmi_get_access_mode(
-        NULL,                      // Pasar NULL para determinar el modo automáticamente
-        xmlFilePath,          // Nombre de la VM
+    const status_t access_status = vmi_get_access_mode(
+        nullptr,                  // Pasar NULL para determinar el modo automáticamente
+        xmlFilePath,              // Nombre de la VM
         init_flags,               // Flags de inicialización
         &init_data,               // Datos de inicialización adicionales
-        &mode                      // Puntero donde se almacenará el modo
+        &mode                     // Puntero donde se almacenará el modo
     );
 
     // Manejo de errores al determinar el modo de acceso
@@ -39,7 +39,7 @@ bool Monitor::initialize() {
         return false;
     }
     // Inicializa VMI utilizando la función vmi_init
-    status_t status = vmi_init(
+    const status_t status = vmi_init(
         &vmi,                               // Estructura que contendrá la instancia
         mode,                               // Modo de acceso determinado
         xmlFilePath,                        // Nombre de la VM
@@ -104,7 +104,7 @@ bool Monitor::initialize() {
     return false;
 }
 
-std::string Monitor::getKernelName() {
+std::string Monitor::getKernelName() const {
     if (!is_initialized) {
         return "LibVMI no inicializado.";
     }
@@ -118,15 +118,12 @@ std::string Monitor::getKernelName() {
         std::string result(kernel_name);  // Convierte la cadena a std::string
         free(kernel_name);                // Libera la memoria
         return result;                    // Devuelve el nombre del kernel
-    } else {
-        return "No se pudo leer el nombre del kernel.";
     }
-
+    return "No se pudo leer el nombre del kernel.";
 }
 
-void Monitor::listProcesses() {
+void Monitor::listProcesses() const {
     addr_t kernel_addr = 0xFFFF800000000000;
-    int offset_to_name_field = 0x04;
 
     if (!is_initialized) {
         std::cerr << "LibVMI no inicializado. No se pueden listar procesos." << std::endl;
@@ -145,6 +142,7 @@ void Monitor::listProcesses() {
     list_entry = list_head;
 
     do {
+        constexpr int offset_to_name_field = 0x04;
         addr_t task_struct = 0;
 
         // Leer la dirección de la estructura de tarea (task_struct) desde la lista
@@ -153,8 +151,7 @@ void Monitor::listProcesses() {
         }
 
         // Leer el nombre del proceso desde la memoria usando el desplazamiento adecuado
-        char* process_name = vmi_read_str_va(vmi, task_struct + offset_to_name_field, 0);
-        if (process_name != nullptr) {
+        if (char* process_name = vmi_read_str_va(vmi, task_struct + offset_to_name_field, 0); process_name != nullptr) {
             std::cout << "Proceso: " << process_name << std::endl;
             free(process_name); // Liberar la memoria asignada por vmi_read_str_va
         } else {

@@ -63,7 +63,7 @@ int main() {
         mtx.unlock();
 
         // Esperar un tiempo antes de volver a verificar
-        std::this_thread::sleep_for(std::chrono::seconds(10)); // Ajusta el tiempo según sea necesario
+        std::this_thread::sleep_for(std::chrono::seconds(10));
     }
 
     // (No se llegará aquí debido al bucle infinito)

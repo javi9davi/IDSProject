@@ -10,8 +10,8 @@ public:
     explicit Monitor(const std::string& vm_name, virConnectPtr conn);  // Constructor que inicializa LibVMI
     ~Monitor();                           // Destructor para limpiar recursos
     bool initialize();                    // Inicializa la conexión con la VM
-    std::string getKernelName();          // Obtiene el nombre del kernel
-    void listProcesses();                 // Lista procesos activos
+    std::string getKernelName() const;          // Obtiene el nombre del kernel
+    void listProcesses() const;                 // Lista procesos activos
 
 private:
     vmi_instance_t vmi;                   // Instancia de LibVMI
