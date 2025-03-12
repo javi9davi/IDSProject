@@ -16,6 +16,10 @@ link_directories(/home/javierdr/libvmi/build)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(LIBVIRT REQUIRED libvirt)
 
+find_package(OpenSSL REQUIRED)
+include_directories(${OPENSSL_INCLUDE_DIR})
+link_directories(${OPENSSL_LIBRARIES})
+
 include_directories(${LIBVIRT_INCLUDE_DIRS})
 link_directories(${LIBVIRT_LIBRARY_DIRS})
 
@@ -56,6 +60,8 @@ set(PROJECT_SOURCES
         src/response/mitigation.h
         src/response/alerting.cpp
         src/response/alerting.h
+        src/monitor/fileMonitor/fileMonitor.cpp
+        src/monitor/fileMonitor/fileMonitor.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -76,6 +82,7 @@ target_link_libraries(IDS-TFG PRIVATE
         Qt${QT_VERSION_MAJOR}::Widgets
         Qt${QT_VERSION_MAJOR}::Core
         Qt${QT_VERSION_MAJOR}::DBus
+        ${OPENSSL_LIBRARIES}
         ${VMI_LIBRARY}
         ${LIBVIRT_LIBRARIES}
 )

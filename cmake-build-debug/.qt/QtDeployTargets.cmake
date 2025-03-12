@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_IDS-TFG_FILE /home/javierdr/IDS-TFG/cmake-build-debug/IDS-TFG)
+set(__QT_DEPLOY_TARGET_IDS-TFG_TYPE EXECUTABLE)
