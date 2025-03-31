@@ -54,8 +54,6 @@ set(PROJECT_SOURCES
         src/detection/signatures.h
         src/detection/anomaly.cpp
         src/detection/anomaly.h
-        src/detection/machine_learning.cpp
-        src/detection/machine_learning.h
         src/response/mitigation.cpp
         src/response/mitigation.h
         src/response/alerting.cpp

@@ -1,0 +1,35 @@
+{
+  "General": {
+    "Mode": "Active",
+    "Log_Level": "High",
+    "Update_Interval": 60
+  },
+  "Detection": {
+    "Enable_Anomaly_Detection": true,
+    "Anomaly_Threshold": 0.8,
+    "Enable_Signature_Detection": true,
+    "Signature_DB": "signatures.db",
+    "Machine_Learning_Model": "model.pkl"
+  },
+  "Monitoring": {
+    "Monitor_Files": true,
+    "Monitor_Processes": true,
+    "Monitor_Syscalls": false,
+    "File_Watch_Paths": [
+      "/var/log",
+      "/etc/",
+      "/home/user/documents"
+    ]
+  },
+  "Response": {
+    "Enable_Alerting": true,
+    "Alert_Email": "admin@seguridad.local",
+    "Enable_Mitigation": true,
+    "Kill_Suspicious_Processes": true
+  },
+  "Network": {
+    "Monitor_Traffic": true,
+    "Traffic_Capture_Interface": "eth0",
+    "Traffic_Threshold": 1000000
+  }
+}

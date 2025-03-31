@@ -1,5 +1,6 @@
 #include "fileMonitor.h"
 #include <iostream>
+#include <openssl/evp.h>
 #include <fstream>
 #include <sstream>
 #include <iomanip>
@@ -77,3 +78,27 @@ bool FileMonitor::hasFileChanged(const std::string& file_path) {
     }
     return file_hashes[file_path] != new_hash;
 }
+
+bool FileMonitor::isHashStored(const std::string& file_path) {
+
+    return file_hashes.find(file_path) != file_hashes.end();
+}
+
+void FileMonitor::initializeVMHashes(const std::string& vm_directory) {
+    // Verificar si el directorio existe y es válido
+
+    if (!fs::exists(vm_directory)) {
+        std::cerr << "Error: El directorio no existe -> " << vm_directory << std::endl;
+        return;
+    }
+
+    // Recorrer el directorio y calcular el hash de cada archivo
+    for (const auto& entry : fs::directory_iterator(vm_directory)) {
+        if (fs::is_regular_file(entry.path())) {
+            std::cout << "Procesando archivo: " << entry.path() << std::endl;
+            storeFileHash(entry.path().string());
+        }
+    }
+}
+
+
