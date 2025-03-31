@@ -1,75 +1,94 @@
 #include <iostream>
+#include <fstream>
 #include <thread>
 #include <vector>
 #include <string>
 #include <mutex>
-#include <set>
 #include <chrono>
+#include <unordered_set>
+#include "core/config.h"
+#include "nlohmann/json.hpp"
 #include "initializeTest/initialize.h"
 #include "monitor/monitor.h"
+#include "monitor/fileMonitor/fileMonitor.h"
 
-// Clase para manejar cada monitor en un hilo separado
 class MonitorThread {
 public:
-    MonitorThread(const std::string& vmName, virConnectPtr conn)
-        : vmName(vmName), conn(conn) {}
+    MonitorThread(std::string vmName, const virConnectPtr conn, FileMonitor& fileMonitor, const Config& config)
+        : vmName(std::move(vmName)), conn(conn), fileMonitor(fileMonitor), config(config) {}
 
-    void operator()() {
-        Monitor monitor(vmName, conn);
-        if (monitor.initialize()) {
-            std::cout << "Monitoreando la VM: " << vmName << std::endl;
-            while (shouldContinue) {
-                std::this_thread::sleep_for(std::chrono::seconds(5)); // Simula tiempo de trabajo
-                std::cout << "Continuando la monitorización de la VM: " << vmName << std::endl;
-            }
-        } else {
+    void operator()() const {
+        if (Monitor monitor(vmName, conn); !monitor.initialize()) {
             std::cerr << "Error al inicializar el monitor para la VM: " << vmName << std::endl;
+            return;
+        }
+
+        std::cout << "Monitoreando la VM: " << vmName << std::endl;
+            const std::string vmFilePath = "/home/javierdr/IDS-TFG/hashStore";
+
+        if (config.getUpdateInterval() && !fileMonitor.isHashStored(vmFilePath)) {
+            std::cout << "VM nueva detectada: " << vmName << ". Calculando hashes iniciales..." << std::endl;
+            fileMonitor.initializeVMHashes(vmFilePath);
+        }
+
+        while (shouldContinue) {
+            std::this_thread::sleep_for(std::chrono::seconds(config.getMonitoringInterval()));
+
+            if (config.isMonitorFiles() && fileMonitor.hasFileChanged(vmFilePath)) {
+                std::cout << "Cambio detectado en " << vmName << std::endl;
+                fileMonitor.storeFileHash(vmFilePath);
+            }
+
+            if (config.isMonitorProcesses()) {
+                std::cout << "Monitoreando procesos en la VM: " << vmName << std::endl;
+                // Aquí se puede llamar a una función para monitorear procesos
+            }
         }
     }
 
     void stop() {
-        shouldContinue = false; // Método para detener el monitoreo
+        shouldContinue = false;
     }
 
 private:
     std::string vmName;
     virConnectPtr conn;
+    FileMonitor& fileMonitor;
+    const Config& config;
     bool shouldContinue = true;
 };
 
-int main() {
+[[noreturn]] int main() {
+    Config config;
+
+    if (!config.loadFromFile("../config/config.json")) {
+        std::cerr << "Error: No se pudo cargar la configuración." << std::endl;
+        exit(1);
+    }
+
     VMManager vmManager;
+    FileMonitor fileMonitor(config);
     std::vector<std::thread> threads;
-    std::set<std::string> monitoredVMs; // Conjunto para rastrear VMs monitoreadas
-    std::mutex mtx; // Mutex para proteger acceso a hilos y VMs
+    std::unordered_set<size_t> monitoredVMs;
+    std::mutex mtx;
+    std::hash<std::string> hasher;
 
-    // Bucle de monitoreo para nuevas VMs
     while (true) {
-        std::vector<std::string> vm_names = vmManager.get_vm_names(); // Obtener lista actual de VMs
+        std::vector<std::string> vm_names = vmManager.get_vm_names();
 
-        if (vm_names.size() == 0) {
+        if (vm_names.empty()) {
             std::cout << "No hay MVs disponibles" << std::endl;
         }
 
-        // Proteger el acceso a la lista de hilos
-        mtx.lock();
         for (const auto& vm_name : vm_names) {
-            if (monitoredVMs.find(vm_name) == monitoredVMs.end()) { // Si la VM no está monitoreada
+            size_t vm_hash = hasher(vm_name);
+            if (monitoredVMs.find(vm_hash) == monitoredVMs.end()) {
                 std::cout << "Inicializando el thread para la VM: " << vm_name << std::endl;
-                threads.emplace_back(MonitorThread(vm_name, vmManager.get_connection())); // Lanzar un hilo
-                monitoredVMs.insert(vm_name); // Marcar la VM como monitoreada
+                threads.emplace_back(MonitorThread(vm_name, vmManager.get_connection(), fileMonitor, config));
+                monitoredVMs.insert(vm_hash);
             }
         }
-        mtx.unlock();
 
-        // Esperar un tiempo antes de volver a verificar
-        std::this_thread::sleep_for(std::chrono::seconds(10));
+        std::this_thread::sleep_for(std::chrono::seconds(config.getUpdateInterval()));
     }
-
-    // (No se llegará aquí debido al bucle infinito)
-    for (auto& thread : threads) {
-        thread.join(); // Unirse a cada hilo
-    }
-
-    return 0;
 }
