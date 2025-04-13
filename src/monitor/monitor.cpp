@@ -16,11 +16,17 @@ Monitor::~Monitor() {
 
 
 bool Monitor::initialize() {
-    vmi_init_error_t error_info; // Variable para capturar el error
-    vmi_instance_t vmi = nullptr;
+
+    if (!conn) {
+        std::cerr << "Conexión con libvirt no inicializada." << std::endl;
+        return false;
+    }
+
+    vmi_init_error_t error_info; // Variable para capturar el errorº
+    vmi_instance_t vmi;
     vmi_mode_t mode; // Variable para el modo de acceso
     constexpr uint64_t init_flags = VMI_INIT_DOMAINNAME; // Inicializar con el flag apropiado
-    vmi_init_data_t init_data; // Estructura para datos de inicialización (ajusta según sea necesario)
+    vmi_init_data_t init_data; // Estructura para datos de inicialización
     const std::string xmlFilePathStr = "/etc/libvirt/qemu/" + vm_name + ".xml";
     const char *xmlFilePath = xmlFilePathStr.c_str();
 
@@ -44,14 +50,10 @@ bool Monitor::initialize() {
         mode,                               // Modo de acceso determinado
         xmlFilePath,                        // Nombre de la VM
         init_flags,                         // Flags de inicialización
-        &init_data,                         // Datos de inicialización adicionales
+        nullptr,                            // Datos de inicialización adicionales
         &error_info                         // Puntero para capturar información de error
     );
 
-    if (!conn) {
-        std::cerr << "Conexión con libvirt no inicializada." << std::endl;
-        return false;
-    }
     virDomainPtr domain = virDomainLookupByName(conn, vm_name.c_str());
     if (!domain) {
         std::cerr << "No se encontró la VM: " << vm_name << std::endl;
@@ -95,7 +97,6 @@ bool Monitor::initialize() {
         case VMI_INIT_ERROR_NO_CONFIG_ENTRY:
             std::cerr << "Error: No configuration entry found." << std::endl;
             break;
-        // Agrega otros casos según sea necesario
         default:
             std::cerr << "Error: Unknown error." << std::endl;
             break;

@@ -4,30 +4,36 @@
 #include <string>
 #include <unordered_map>
 #include <filesystem>
-#include "../../core/config.h"
+#include <utility>
+#include <libvirt/libvirt.h>
+#include <libvirt/virterror.h>
 
-namespace fs = std::filesystem;
+#include "../../core/config.h"
 
 class FileMonitor {
 public:
-    explicit FileMonitor(const Config& config) : config(config) {}
+    explicit FileMonitor(const Config& config, std::string vmName, virConnectPtr conn)
+        : config(config), vmName(std::move(vmName)), conn(conn) {}
 
-    // Calcula el hash de un archivo
-    static std::string calculateFileHash(const std::string& file_path);
+    std::string calculateFileHash() const;
 
-    // Guarda el hash de un archivo
-    void storeFileHash(const std::string& file_path);
+    void storeFileHash() const;
 
-    // Verifica si un archivo ha cambiado
-    bool hasFileChanged(const std::string& file_path);
+    bool hasFileChanged();
 
     bool isHashStored(const std::string &file_path);
 
-    void initializeVMHashes(const std::string &vm_directory);
+    void initializeVMHashes();
 
 private:
-    const Config& config;
+    Config config;
+    std::string vmName;
+    virConnectPtr conn;
     std::unordered_map<std::string, std::string> file_hashes;
+
+    void loadStoredHashes();
+
+    static std::string readFileFromVM(virDomainPtr dom, const std::string& guestPath);
 };
 
 #endif // FILEMONITOR_H

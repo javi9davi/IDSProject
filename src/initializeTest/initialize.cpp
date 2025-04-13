@@ -58,7 +58,7 @@ std::vector<std::string> VMManager::get_vm_names() {
 }
 
 // Función optimizada para monitorear las máquinas virtuales
-void VMManager::monitor_vms() {
+void VMManager::monitor_vms() const {
     if (!conn) {
         fprintf(stderr, "Error: No se pudo conectar al hipervisor.\n");
         return;

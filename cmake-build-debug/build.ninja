@@ -153,14 +153,6 @@ build CMakeFiles/IDS-TFG.dir/src/detection/anomaly.cpp.o: CXX_COMPILER__IDS-TFG_
   OBJECT_DIR = CMakeFiles/IDS-TFG.dir
   OBJECT_FILE_DIR = CMakeFiles/IDS-TFG.dir/src/detection
 
-build CMakeFiles/IDS-TFG.dir/src/detection/machine_learning.cpp.o: CXX_COMPILER__IDS-TFG_unscanned_Debug /home/javierdr/IDS-TFG/src/detection/machine_learning.cpp || cmake_object_order_depends_target_IDS-TFG
-  DEFINES = -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/IDS-TFG.dir/src/detection/machine_learning.cpp.o.d
-  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/javierdr/IDS-TFG/cmake-build-debug/IDS-TFG_autogen/include -I/home/javierdr/libvmi -isystem /home/javierdr/Qt/6.8.1/gcc_64/include/QtCore -isystem /home/javierdr/Qt/6.8.1/gcc_64/include -isystem /home/javierdr/Qt/6.8.1/gcc_64/mkspecs/linux-g++ -isystem /home/javierdr/Qt/6.8.1/gcc_64/include/QtWidgets -isystem /home/javierdr/Qt/6.8.1/gcc_64/include/QtGui -isystem /home/javierdr/Qt/6.8.1/gcc_64/include/QtDBus
-  OBJECT_DIR = CMakeFiles/IDS-TFG.dir
-  OBJECT_FILE_DIR = CMakeFiles/IDS-TFG.dir/src/detection
-
 build CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o: CXX_COMPILER__IDS-TFG_unscanned_Debug /home/javierdr/IDS-TFG/src/response/mitigation.cpp || cmake_object_order_depends_target_IDS-TFG
   DEFINES = -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o.d
@@ -185,6 +177,14 @@ build CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o: CXX_COMP
   OBJECT_DIR = CMakeFiles/IDS-TFG.dir
   OBJECT_FILE_DIR = CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor
 
+build CMakeFiles/IDS-TFG.dir/src/daemonize/daemonize.cpp.o: CXX_COMPILER__IDS-TFG_unscanned_Debug /home/javierdr/IDS-TFG/src/daemonize/daemonize.cpp || cmake_object_order_depends_target_IDS-TFG
+  DEFINES = -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/IDS-TFG.dir/src/daemonize/daemonize.cpp.o.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
+  INCLUDES = -I/home/javierdr/IDS-TFG/cmake-build-debug/IDS-TFG_autogen/include -I/home/javierdr/libvmi -isystem /home/javierdr/Qt/6.8.1/gcc_64/include/QtCore -isystem /home/javierdr/Qt/6.8.1/gcc_64/include -isystem /home/javierdr/Qt/6.8.1/gcc_64/mkspecs/linux-g++ -isystem /home/javierdr/Qt/6.8.1/gcc_64/include/QtWidgets -isystem /home/javierdr/Qt/6.8.1/gcc_64/include/QtGui -isystem /home/javierdr/Qt/6.8.1/gcc_64/include/QtDBus
+  OBJECT_DIR = CMakeFiles/IDS-TFG.dir
+  OBJECT_FILE_DIR = CMakeFiles/IDS-TFG.dir/src/daemonize
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target IDS-TFG
@@ -193,9 +193,9 @@ build CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o: CXX_COMP
 #############################################
 # Link the executable IDS-TFG
 
-build IDS-TFG: CXX_EXECUTABLE_LINKER__IDS-TFG_Debug CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.o CMakeFiles/IDS-TFG.dir/src/main.cpp.o CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.o CMakeFiles/IDS-TFG.dir/src/monitor/process.cpp.o CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o CMakeFiles/IDS-TFG.dir/src/detection/anomaly.cpp.o CMakeFiles/IDS-TFG.dir/src/detection/machine_learning.cpp.o CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.o CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o | /home/javierdr/Qt/6.8.1/gcc_64/lib/libQt6Widgets.so.6.8.1 /usr/lib64/libssl.so /usr/lib64/libcrypto.so /home/javierdr/libvmi/build/libvmi/libvmi.so /home/javierdr/Qt/6.8.1/gcc_64/lib/libQt6Gui.so.6.8.1 /home/javierdr/Qt/6.8.1/gcc_64/lib/libQt6DBus.so.6.8.1 /home/javierdr/Qt/6.8.1/gcc_64/lib/libQt6Core.so.6.8.1 /usr/lib64/libGLX.so /usr/lib64/libOpenGL.so || IDS-TFG_autogen IDS-TFG_autogen_timestamp_deps
+build IDS-TFG: CXX_EXECUTABLE_LINKER__IDS-TFG_Debug CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.o CMakeFiles/IDS-TFG.dir/src/main.cpp.o CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.o CMakeFiles/IDS-TFG.dir/src/monitor/process.cpp.o CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o CMakeFiles/IDS-TFG.dir/src/detection/anomaly.cpp.o CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.o CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o CMakeFiles/IDS-TFG.dir/src/daemonize/daemonize.cpp.o | /home/javierdr/Qt/6.8.1/gcc_64/lib/libQt6Widgets.so.6.8.1 /usr/lib64/libssl.so /usr/lib64/libcrypto.so /home/javierdr/libvmi/build/libvmi/libvmi.so /home/javierdr/Qt/6.8.1/gcc_64/lib/libQt6Gui.so.6.8.1 /home/javierdr/Qt/6.8.1/gcc_64/lib/libQt6DBus.so.6.8.1 /home/javierdr/Qt/6.8.1/gcc_64/lib/libQt6Core.so.6.8.1 /usr/lib64/libGLX.so /usr/lib64/libOpenGL.so || IDS-TFG_autogen IDS-TFG_autogen_timestamp_deps
   FLAGS = -g
-  LINK_LIBRARIES = -Wl,-rpath,/home/javierdr/libvmi/build:/usr/lib64/libssl.so:/usr/lib64/libcrypto.so:/home/javierdr/Qt/6.8.1/gcc_64/lib:/home/javierdr/libvmi/build/libvmi:  /home/javierdr/Qt/6.8.1/gcc_64/lib/libQt6Widgets.so.6.8.1  /usr/lib64/libssl.so  /usr/lib64/libcrypto.so  /home/javierdr/libvmi/build/libvmi/libvmi.so  -lvirt  /home/javierdr/Qt/6.8.1/gcc_64/lib/libQt6Gui.so.6.8.1  /home/javierdr/Qt/6.8.1/gcc_64/lib/libQt6DBus.so.6.8.1  /home/javierdr/Qt/6.8.1/gcc_64/lib/libQt6Core.so.6.8.1  /usr/lib64/libGLX.so  /usr/lib64/libOpenGL.so
+  LINK_LIBRARIES = -Wl,-rpath,/home/javierdr/libvmi/build:/usr/lib64/libssl.so:/usr/lib64/libcrypto.so:/home/javierdr/Qt/6.8.1/gcc_64/lib:/home/javierdr/libvmi/build/libvmi:  /home/javierdr/Qt/6.8.1/gcc_64/lib/libQt6Widgets.so.6.8.1  /usr/lib64/libssl.so  /usr/lib64/libcrypto.so  /home/javierdr/libvmi/build/libvmi/libvmi.so  -lvirt  -lvirt-qemu  -ljson-c  /home/javierdr/Qt/6.8.1/gcc_64/lib/libQt6Gui.so.6.8.1  /home/javierdr/Qt/6.8.1/gcc_64/lib/libQt6DBus.so.6.8.1  /home/javierdr/Qt/6.8.1/gcc_64/lib/libQt6Core.so.6.8.1  /usr/lib64/libGLX.so  /usr/lib64/libOpenGL.so
   LINK_PATH = -L/home/javierdr/libvmi/build   -L/usr/lib64/libssl.so   -L/usr/lib64/libcrypto.so
   OBJECT_DIR = CMakeFiles/IDS-TFG.dir
   POST_BUILD = :

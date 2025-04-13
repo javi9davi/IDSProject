@@ -15,10 +15,10 @@
     "Monitor_Files": true,
     "Monitor_Processes": true,
     "Monitor_Syscalls": false,
-    "File_Watch_Paths": [
-      "/var/log",
-      "/etc/",
-      "/home/user/documents"
+    "Files2Watch": [
+      "/home/user/Escritorio/prueba.txt",
+      "/etc/passwd",
+      "/etc/shadow"
     ]
   },
   "Response": {

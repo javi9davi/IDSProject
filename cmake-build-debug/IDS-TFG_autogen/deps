@@ -9,10 +9,10 @@ IDS-TFG_autogen/timestamp: \
 	/home/javierdr/IDS-TFG/src/core/logger.h \
 	/home/javierdr/IDS-TFG/src/core/utils.cpp \
 	/home/javierdr/IDS-TFG/src/core/utils.h \
+	/home/javierdr/IDS-TFG/src/daemonize/daemonize.cpp \
+	/home/javierdr/IDS-TFG/src/daemonize/daemonize.h \
 	/home/javierdr/IDS-TFG/src/detection/anomaly.cpp \
 	/home/javierdr/IDS-TFG/src/detection/anomaly.h \
-	/home/javierdr/IDS-TFG/src/detection/machine_learning.cpp \
-	/home/javierdr/IDS-TFG/src/detection/machine_learning.h \
 	/home/javierdr/IDS-TFG/src/detection/signatures.cpp \
 	/home/javierdr/IDS-TFG/src/detection/signatures.h \
 	/home/javierdr/IDS-TFG/src/initializeTest/initialize.cpp \

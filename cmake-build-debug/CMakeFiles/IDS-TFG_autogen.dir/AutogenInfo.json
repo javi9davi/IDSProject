@@ -440,15 +440,15 @@
 			null
 		],
 		[
-			"/home/javierdr/IDS-TFG/src/detection/anomaly.h",
+			"/home/javierdr/IDS-TFG/src/daemonize/daemonize.h",
 			"MU",
-			"CE7ULH2UUM/moc_anomaly.cpp",
+			"UJXUGERBDO/moc_daemonize.cpp",
 			null
 		],
 		[
-			"/home/javierdr/IDS-TFG/src/detection/machine_learning.h",
+			"/home/javierdr/IDS-TFG/src/detection/anomaly.h",
 			"MU",
-			"CE7ULH2UUM/moc_machine_learning.cpp",
+			"CE7ULH2UUM/moc_anomaly.cpp",
 			null
 		],
 		[
@@ -575,12 +575,8 @@
 		[ "/home/javierdr/IDS-TFG/src/core/config.cpp", "MU", null ],
 		[ "/home/javierdr/IDS-TFG/src/core/logger.cpp", "MU", null ],
 		[ "/home/javierdr/IDS-TFG/src/core/utils.cpp", "MU", null ],
+		[ "/home/javierdr/IDS-TFG/src/daemonize/daemonize.cpp", "MU", null ],
 		[ "/home/javierdr/IDS-TFG/src/detection/anomaly.cpp", "MU", null ],
-		[
-			"/home/javierdr/IDS-TFG/src/detection/machine_learning.cpp",
-			"MU",
-			null
-		],
 		[ "/home/javierdr/IDS-TFG/src/detection/signatures.cpp", "MU", null ],
 		[
 			"/home/javierdr/IDS-TFG/src/initializeTest/initialize.cpp",

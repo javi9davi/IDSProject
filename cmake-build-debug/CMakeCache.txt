@@ -264,6 +264,12 @@ IDS-TFG_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 IDS-TFG_SOURCE_DIR:STATIC=/home/javierdr/IDS-TFG
 
+//The directory containing a CMake configuration file for Jansson.
+Jansson_DIR:PATH=Jansson_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for Libvirt.
+Libvirt_DIR:PATH=Libvirt_DIR-NOTFOUND
+
 //Path to a file.
 OPENGL_EGL_INCLUDE_DIR:PATH=/usr/include
 
