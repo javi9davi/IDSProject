@@ -60,6 +60,8 @@ set(PROJECT_SOURCES
         src/response/alerting.h
         src/monitor/fileMonitor/fileMonitor.cpp
         src/monitor/fileMonitor/fileMonitor.h
+        src/daemonize/daemonize.cpp
+        src/daemonize/daemonize.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -83,6 +85,8 @@ target_link_libraries(IDS-TFG PRIVATE
         ${OPENSSL_LIBRARIES}
         ${VMI_LIBRARY}
         ${LIBVIRT_LIBRARIES}
+        virt-qemu
+        json-c
 )
 
 target_compile_options(IDS-TFG PRIVATE ${LIBVIRT_CFLAGS_OTHER})

@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-688f1aa885d24c943565.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "IDS-TFG",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "IDS-TFG::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-IDS-TFG-Debug-c57aacb295ab141a16eb.json",
+					"name" : "IDS-TFG",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "IDS-TFG_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-IDS-TFG_autogen-Debug-9733bba06a0de080c5b0.json",
+					"name" : "IDS-TFG_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "IDS-TFG_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-IDS-TFG_autogen_timestamp_deps-Debug-43387c4d526d4a894a32.json",
+					"name" : "IDS-TFG_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/javierdr/IDS-TFG/cmake-build-debug",
+		"source" : "/home/javierdr/IDS-TFG"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
