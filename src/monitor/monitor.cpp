@@ -1,168 +1,192 @@
 #include "monitor.h"
 #include <iostream>
+#include <utility>
 #include <vector>
 #include <libvirt/libvirt-domain.h>
 #include <libvmi/libvmi.h>
+#include <json-c/json.h>
+#include <libvirt/libvirt.h>
+#include <libvirt/libvirt-qemu.h>
+#include <thread>
+#include <chrono>
+#include <openssl/bio.h>
+#include <openssl/evp.h>
+#include "../libvmiApi/libvmiCalls.h"
 
-Monitor::Monitor(const std::string& vm_name, virConnectPtr conn)
-    : vm_name(vm_name), vmi(nullptr), is_initialized(false), conn(conn) {}
+Monitor::Monitor(std::string  vm_name, const virConnectPtr &conn)
+    : vm_name(std::move(vm_name)), conn(conn), vmi(nullptr) {}
+
 
 Monitor::~Monitor() {
-    if (is_initialized && vmi) {
+    if (vmi) {
         vmi_destroy(vmi);  // Liberar recursos de LibVMI
         std::cout << "LibVMI cerrado correctamente." << std::endl;
     }
 }
 
+vmi_instance_t Monitor::get_vmi() const {
+    return vmi;
+}
+
 
 bool Monitor::initialize() {
-
     if (!conn) {
-        std::cerr << "Conexión con libvirt no inicializada." << std::endl;
+        std::cerr << "[ERROR] Conexión con libvirt no inicializada." << std::endl;
         return false;
     }
-
-    vmi_init_error_t error_info; // Variable para capturar el errorº
-    vmi_instance_t vmi;
-    vmi_mode_t mode; // Variable para el modo de acceso
-    constexpr uint64_t init_flags = VMI_INIT_DOMAINNAME; // Inicializar con el flag apropiado
-    vmi_init_data_t init_data; // Estructura para datos de inicialización
-    const std::string xmlFilePathStr = "/etc/libvirt/qemu/" + vm_name + ".xml";
-    const char *xmlFilePath = xmlFilePathStr.c_str();
-
-    // Determina el modo de acceso
-    const status_t access_status = vmi_get_access_mode(
-        nullptr,                  // Pasar NULL para determinar el modo automáticamente
-        xmlFilePath,              // Nombre de la VM
-        init_flags,               // Flags de inicialización
-        &init_data,               // Datos de inicialización adicionales
-        &mode                     // Puntero donde se almacenará el modo
-    );
-
-    // Manejo de errores al determinar el modo de acceso
-    if (access_status != VMI_SUCCESS) {
-        std::cerr << "Error determining access mode." << std::endl;
-        return false;
-    }
-    // Inicializa VMI utilizando la función vmi_init
-    const status_t status = vmi_init(
-        &vmi,                               // Estructura que contendrá la instancia
-        mode,                               // Modo de acceso determinado
-        xmlFilePath,                        // Nombre de la VM
-        init_flags,                         // Flags de inicialización
-        nullptr,                            // Datos de inicialización adicionales
-        &error_info                         // Puntero para capturar información de error
-    );
 
     virDomainPtr domain = virDomainLookupByName(conn, vm_name.c_str());
     if (!domain) {
-        std::cerr << "No se encontró la VM: " << vm_name << std::endl;
+        std::cerr << "[ERROR] No se encontró la VM: " << vm_name << std::endl;
         return false;
     }
 
+    std::string kernelName = getKernelName(domain);
+    if (kernelName.empty()) {
+        std::cerr << "[ERROR] No se pudo obtener el kernel de la VM: " << vm_name << std::endl;
+        return false;
+    }
+
+    if (!generateProfileAndConfigureLibVMI(kernelName, vm_name)) {
+        std::cerr << "[ERROR] No se pudo generar el perfil LibVMI para la VM: " << vm_name << std::endl;
+        return false;
+    }
+
+    vmi_init_error_t error_info;
+    status_t status = vmi_init_complete(
+        &vmi,
+        vm_name.c_str(),
+        VMI_INIT_DOMAINNAME,
+        nullptr,
+        VMI_CONFIG_GLOBAL_FILE_ENTRY,
+        nullptr,
+        &error_info
+    );
+
     if (status == VMI_SUCCESS) {
-        is_initialized = true;
-        std::cout << "Conexión establecida con la VM: " << vm_name << std::endl;
+        std::cout << "[INFO] Conexión establecida con la VM: " << vm_name << std::endl;
         return true;
     }
-        // Si la inicialización falla, imprime el error
-        std::cerr << "Error al inicializar LibVMI para la VM: " << vm_name << std::endl;
 
-    // Imprimir el mensaje de error basado en el valor de error_info
+    std::cerr << "[ERROR] Falló la inicialización de LibVMI para: " << vm_name << std::endl;
+
     switch (error_info) {
-        case VMI_INIT_ERROR_NONE:
-            std::cerr << "Error: No error." << std::endl;
-            break;
-        case VMI_INIT_ERROR_DRIVER_NOT_DETECTED:
-            std::cerr << "Error: Failed to auto-detect hypervisor." << std::endl;
-            break;
-        case VMI_INIT_ERROR_DRIVER:
-            std::cerr << "Error: Failed to initialize hypervisor driver." << std::endl;
-            break;
-        case VMI_INIT_ERROR_VM_NOT_FOUND:
-            std::cerr << "Error: Failed to find the specified VM." << std::endl;
-            break;
-        case VMI_INIT_ERROR_PAGING:
-            std::cerr << "Error: Failed to determine or initialize paging functions." << std::endl;
-            break;
-        case VMI_INIT_ERROR_OS:
-            std::cerr << "Error: Failed to determine or initialize OS functions." << std::endl;
-            break;
-        case VMI_INIT_ERROR_EVENTS:
-            std::cerr << "Error: Failed to initialize events." << std::endl;
-            break;
-        case VMI_INIT_ERROR_NO_CONFIG:
-            std::cerr << "Error: No configuration was found for OS initialization." << std::endl;
-            break;
-        case VMI_INIT_ERROR_NO_CONFIG_ENTRY:
-            std::cerr << "Error: No configuration entry found." << std::endl;
-            break;
-        default:
-            std::cerr << "Error: Unknown error." << std::endl;
-            break;
+        case VMI_INIT_ERROR_NONE: std::cerr << "No error.\n"; break;
+        case VMI_INIT_ERROR_DRIVER_NOT_DETECTED: std::cerr << "Hypervisor no detectado.\n"; break;
+        case VMI_INIT_ERROR_DRIVER: std::cerr << "Error con driver de LibVMI.\n"; break;
+        case VMI_INIT_ERROR_VM_NOT_FOUND: std::cerr << "VM no encontrada.\n"; break;
+        case VMI_INIT_ERROR_PAGING: std::cerr << "Error en paginación.\n"; break;
+        case VMI_INIT_ERROR_OS: std::cerr << "Error en funciones de SO.\n"; break;
+        case VMI_INIT_ERROR_EVENTS: std::cerr << "Error inicializando eventos.\n"; break;
+        case VMI_INIT_ERROR_NO_CONFIG: std::cerr << "No hay configuración de SO.\n"; break;
+        case VMI_INIT_ERROR_NO_CONFIG_ENTRY: std::cerr << "No hay entrada en vmi.conf.\n"; break;
+        default: std::cerr << "Error desconocido.\n"; break;
     }
 
     return false;
 }
 
-std::string Monitor::getKernelName() const {
-    if (!is_initialized) {
-        return "LibVMI no inicializado.";
+
+std::string Monitor::getKernelName(virDomainPtr domain) const {
+
+    if (!domain) {
+        return "Dominio nulo.";
     }
 
-    char* kernel_name = nullptr;
-
-    // vmi_read_str_va devuelve un puntero
-    kernel_name = vmi_read_str_va(vmi, 0xFFFF800000000000, 0);
-
-    if (kernel_name != nullptr) {  // Comprueba si el puntero no es nulo
-        std::string result(kernel_name);  // Convierte la cadena a std::string
-        free(kernel_name);                // Libera la memoria
-        return result;                    // Devuelve el nombre del kernel
-    }
-    return "No se pudo leer el nombre del kernel.";
-}
-
-void Monitor::listProcesses() const {
-    addr_t kernel_addr = 0xFFFF800000000000;
-
-    if (!is_initialized) {
-        std::cerr << "LibVMI no inicializado. No se pueden listar procesos." << std::endl;
-        return;
-    }
-
-    addr_t list_head = 0;
-    addr_t list_entry = 0;
-
-    // Suponiendo que los procesos están en una lista doblemente enlazada.
-    if (vmi_get_offset(vmi, "linux_tasks", &list_head) != VMI_SUCCESS) {
-        std::cerr << "No se pudo obtener la dirección de los procesos." << std::endl;
-        return;
-    }
-
-    list_entry = list_head;
-
-    do {
-        constexpr int offset_to_name_field = 0x04;
-        addr_t task_struct = 0;
-
-        // Leer la dirección de la estructura de tarea (task_struct) desde la lista
-        if (vmi_read_64_va(vmi, list_entry, 0, &task_struct) != VMI_SUCCESS) {
-            break; // Salir del bucle si hay un error en la lectura
+    // guest-exec: /bin/uname -r
+    std::string execCmd = R"({
+        "execute": "guest-exec",
+        "arguments": {
+            "path": "/bin/uname",
+            "arg": ["-r"],
+            "capture-output": true
         }
+    })";
 
-        // Leer el nombre del proceso desde la memoria usando el desplazamiento adecuado
-        if (char* process_name = vmi_read_str_va(vmi, task_struct + offset_to_name_field, 0); process_name != nullptr) {
-            std::cout << "Proceso: " << process_name << std::endl;
-            free(process_name); // Liberar la memoria asignada por vmi_read_str_va
-        } else {
-            std::cerr << "Error al leer el nombre del proceso." << std::endl;
+    char* execResult = virDomainQemuAgentCommand(domain, execCmd.c_str(), -2, 0);
+    if (!execResult) {
+        std::cerr << "[ERROR] No se pudo ejecutar uname -r en la VM." << std::endl;
+        return "";
+    }
+
+    std::string execStr(execResult);
+    free(execResult);
+
+    // Parsear respuesta
+    json_object* root = json_tokener_parse(execStr.c_str());
+    if (!root) {
+        std::cerr << "[ERROR] JSON inválido de guest-exec." << std::endl;
+        return "";
+    }
+
+    json_object* pidObj = json_object_object_get(root, "return");
+    if (!pidObj || json_object_get_type(pidObj) != json_type_object) {
+        json_object_put(root);
+        return "";
+    }
+
+    json_object* pidField = json_object_object_get(pidObj, "pid");
+    int pid = pidField ? json_object_get_int(pidField) : -1;
+    json_object_put(root);
+
+    if (pid == -1) {
+        return "";
+    }
+
+    // Esperar a que termine
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+
+    std::string statusCmd = R"({
+        "execute": "guest-exec-status",
+        "arguments": {
+            "pid": )" + std::to_string(pid) + R"(
         }
+    })";
 
-        // Leer la siguiente entrada de la lista (circular)
-        if (vmi_read_64_va(vmi, task_struct, 0, &list_entry) != VMI_SUCCESS) {
-            break; // Salir del bucle si hay un error en la lectura
-        }
+    char* statusResult = virDomainQemuAgentCommand(domain, statusCmd.c_str(), -2, 0);
+    if (!statusResult) {
+        std::cerr << "[ERROR] No se pudo obtener estado del uname -r." << std::endl;
+        return "";
+    }
 
-    } while (list_entry != list_head);
+    std::string statusStr(statusResult);
+    free(statusResult);
+
+    root = json_tokener_parse(statusStr.c_str());
+    if (!root) {
+        std::cerr << "[ERROR] JSON inválido de guest-exec-status." << std::endl;
+        return "";
+    }
+
+    json_object* outRoot = json_object_object_get(root, "return");
+    if (!outRoot || json_object_get_type(outRoot) != json_type_object) {
+        json_object_put(root);
+        return "";
+    }
+
+    json_object* outContent = json_object_object_get(outRoot, "out-data");
+    if (!outContent || json_object_get_type(outContent) != json_type_string) {
+        json_object_put(root);
+        return "";
+    }
+
+    std::string outputBase64 = json_object_get_string(outContent);
+    json_object_put(root);
+
+    // Decodificar base64
+    BIO* b64 = BIO_new(BIO_f_base64());
+    BIO* bio = BIO_new_mem_buf(outputBase64.data(), outputBase64.length());
+    bio = BIO_push(b64, bio);
+    BIO_set_flags(bio, BIO_FLAGS_BASE64_NO_NL);
+
+    std::string decoded(outputBase64.size(), '\0');
+    int decodedLen = BIO_read(bio, decoded.data(), outputBase64.length());
+    BIO_free_all(bio);
+
+    if (decodedLen <= 0) {
+        return "";
+    }
+
+    decoded.resize(decodedLen);
+    return decoded;
 }

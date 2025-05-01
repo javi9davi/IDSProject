@@ -12,8 +12,8 @@
 
 class FileMonitor {
 public:
-    explicit FileMonitor(const Config& config, std::string vmName, virConnectPtr conn)
-        : config(config), vmName(std::move(vmName)), conn(conn) {}
+    explicit FileMonitor(Config  config, std::string vmName, virConnectPtr conn)
+        : config(std::move(config)), vmName(std::move(vmName)), conn(conn) {}
 
     std::string calculateFileHash() const;
 
