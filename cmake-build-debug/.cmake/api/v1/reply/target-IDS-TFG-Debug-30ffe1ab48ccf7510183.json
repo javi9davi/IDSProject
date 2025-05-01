@@ -33,9 +33,9 @@
 			"/home/javierdr/Qt/6.8.1/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake",
 			"/home/javierdr/Qt/6.8.1/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake",
 			"/home/javierdr/Qt/6.8.1/gcc_64/lib/cmake/Qt6/Qt6Config.cmake",
-			"/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindOpenGL.cmake",
+			"/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindOpenGL.cmake",
 			"/home/javierdr/Qt/6.8.1/gcc_64/lib/cmake/Qt6/FindWrapOpenGL.cmake",
-			"/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
+			"/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake",
 			"/home/javierdr/Qt/6.8.1/gcc_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
 			"/home/javierdr/Qt/6.8.1/gcc_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake",
 			"/home/javierdr/Qt/6.8.1/gcc_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake",
@@ -624,12 +624,12 @@
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "src/monitor/process.cpp",
+			"path" : "src/monitor/processMonitor/processMonitor.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 4,
-			"path" : "src/monitor/process.h",
+			"path" : "src/monitor/processMonitor/processMonitor.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -657,12 +657,12 @@
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "src/detection/anomaly.cpp",
+			"path" : "src/detection/intrusionDetector.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 4,
-			"path" : "src/detection/anomaly.h",
+			"path" : "src/detection/intrusionDetector.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -701,12 +701,12 @@
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "src/daemonize/daemonize.cpp",
+			"path" : "src/libvmiApi/libvmiCalls.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 4,
-			"path" : "src/daemonize/daemonize.h",
+			"path" : "src/libvmiApi/libvmiCalls.h",
 			"sourceGroupIndex" : 1
 		},
 		{

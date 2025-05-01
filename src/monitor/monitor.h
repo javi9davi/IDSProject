@@ -7,16 +7,16 @@
 
 class Monitor {
 public:
-    explicit Monitor(const std::string& vm_name, virConnectPtr conn);  // Constructor que inicializa LibVMI
+    explicit Monitor(std::string  vm_name, const virConnectPtr &conn);  // Constructor que inicializa LibVMI
     ~Monitor();                           // Destructor para limpiar recursos
     bool initialize();                    // Inicializa la conexión con la VM
-    std::string getKernelName() const;          // Obtiene el nombre del kernel
-    void listProcesses() const;                 // Lista procesos activos
+    [[nodiscard]] std::string getKernelName(virDomainPtr domain) const;          // Obtiene el nombre del kernel
+    [[nodiscard]] vmi_instance_t get_vmi() const;             // Get VMI
+
 
 private:
-    vmi_instance_t vmi;                   // Instancia de LibVMI
+    vmi_instance_t vmi;            // Instancia de LibVMI
     std::string vm_name;                  // Nombre de la VM huésped
-    bool is_initialized;                  // Estado de inicialización
     virConnectPtr conn;
 };
 

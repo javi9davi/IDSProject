@@ -13,20 +13,35 @@
 #include "initializeTest/initialize.h"
 #include "monitor/monitor.h"
 #include "monitor/fileMonitor/fileMonitor.h"
+#include "monitor/processMonitor/processMonitor.h"
 #include "/usr/include/libvirt/libvirt-qemu.h"
+#include "libvmiApi/libvmiCalls.h"
 
 class MonitorThread {
 public:
-    MonitorThread(std::string vmName, virConnectPtr conn, std::shared_ptr<FileMonitor> fileMonitor, const Config& config)
-        : vmName(std::move(vmName)), fileMonitor(std::move(fileMonitor)), conn(conn), config(config) {}
+    MonitorThread(std::string vmName, const virConnectPtr &conn, std::shared_ptr<FileMonitor> fileMonitor, std::shared_ptr<ProcessMonitor> processMonitor, const Config& config)
+        : vmName(std::move(vmName)), fileMonitor(std::move(fileMonitor)), processMonitor(std::move(processMonitor)), conn(conn), config(config) {}
 
     void operator()() const {
-        if (Monitor monitor(vmName, conn); !monitor.initialize()) {
+        Monitor monitor(vmName, conn);
+
+        if (!monitor.initialize()) {
             std::cerr << "Error al inicializar el monitor para la VM: " << vmName << std::endl;
             return;
         }
 
         std::cout << "Monitoreando la VM: " << vmName << std::endl;
+
+        // Aquí obtenemos el VMI y lo configuramos en ProcessMonitor
+        const vmi_instance_t &vmi = monitor.get_vmi();
+        processMonitor->setVMI(vmi);
+
+        const virDomainPtr &domain = virDomainLookupByName(conn, vmName.c_str());
+        const std::string kernelName = monitor.getKernelName(domain);
+        if (!generateProfileAndConfigureLibVMI(kernelName, vmName)) {
+            std::cerr << "[ERROR] No se pudo generar el perfil para " << vmName << ". Abortando monitoreo." << std::endl;
+            return;
+        }
 
         bool needsInit = false;
         for (const auto& path : config.getFiles2Watch()) {
@@ -41,6 +56,8 @@ public:
             fileMonitor->initializeVMHashes();
         }
 
+        processMonitor->storeProcessSnapshot();
+
         while (shouldContinue) {
             std::this_thread::sleep_for(std::chrono::seconds(config.getMonitoringInterval()));
 
@@ -50,8 +67,10 @@ public:
             }
 
             if (config.isMonitorProcesses()) {
-                std::cout << "Monitoreando procesos en la VM: " << vmName << std::endl;
-                // Lógica para monitorización de procesos (por implementar)
+                if (processMonitor->hasProcessChanged()) {
+                    std::cout << "[ALERTA] Cambio detectado en procesos de la VM: " << vmName << std::endl;
+                    processMonitor->storeProcessSnapshot();
+                }
             }
         }
     }
@@ -63,6 +82,7 @@ public:
 private:
     std::string vmName;
     std::shared_ptr<FileMonitor> fileMonitor;
+    std::shared_ptr<ProcessMonitor> processMonitor;
     virConnectPtr conn;
     const Config& config;
     bool shouldContinue = true;
@@ -79,7 +99,6 @@ private:
     VMManager vmManager;
     std::vector<std::thread> threads;
     std::unordered_set<size_t> monitoredVMs;
-    std::mutex mtx;
 
     std::filesystem::path currentPath = std::filesystem::current_path().parent_path();
     std::filesystem::path projectFolder = currentPath / "hashStore";
@@ -94,20 +113,18 @@ private:
 
         for (const auto& vm_name : vm_names) {
             std::hash<std::string> hasher;
-            size_t vm_hash = hasher(vm_name);
 
-            if (monitoredVMs.find(vm_hash) == monitoredVMs.end()) {
+            if (std::size_t vm_hash = hasher(vm_name); monitoredVMs.find(vm_hash) == monitoredVMs.end()) {
                 std::cout << "Inicializando el thread para la VM: " << vm_name << std::endl;
 
                 auto fileMonitorPtr = std::make_shared<FileMonitor>(config, vm_name, vmManager.get_connection());
-                threads.emplace_back(MonitorThread(vm_name, vmManager.get_connection(), fileMonitorPtr, config));
+                auto processMonitorPtr = std::make_shared<ProcessMonitor>(vm_name, vmManager.get_connection(), nullptr);
 
+                threads.emplace_back(MonitorThread(vm_name, vmManager.get_connection(), fileMonitorPtr, processMonitorPtr, config));
                 monitoredVMs.insert(vm_hash);
             }
         }
 
         std::this_thread::sleep_for(std::chrono::seconds(config.getUpdateInterval()));
     }
-
-    // for (auto& t : threads) { if (t.joinable()) t.join(); }
 }

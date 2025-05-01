@@ -1,7 +1,7 @@
 IDS-TFG_autogen/timestamp: \
 	/home/javierdr/IDS-TFG/CMakeLists.txt \
-	/home/javierdr/IDS-TFG/cmake-build-debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
-	/home/javierdr/IDS-TFG/cmake-build-debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
+	/home/javierdr/IDS-TFG/cmake-build-debug/CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
+	/home/javierdr/IDS-TFG/cmake-build-debug/CMakeFiles/3.31.6/CMakeSystem.cmake \
 	/home/javierdr/IDS-TFG/cmake-build-debug/IDS-TFG_autogen/moc_predefs.h \
 	/home/javierdr/IDS-TFG/src/core/config.cpp \
 	/home/javierdr/IDS-TFG/src/core/config.h \
@@ -9,14 +9,14 @@ IDS-TFG_autogen/timestamp: \
 	/home/javierdr/IDS-TFG/src/core/logger.h \
 	/home/javierdr/IDS-TFG/src/core/utils.cpp \
 	/home/javierdr/IDS-TFG/src/core/utils.h \
-	/home/javierdr/IDS-TFG/src/daemonize/daemonize.cpp \
-	/home/javierdr/IDS-TFG/src/daemonize/daemonize.h \
-	/home/javierdr/IDS-TFG/src/detection/anomaly.cpp \
-	/home/javierdr/IDS-TFG/src/detection/anomaly.h \
+	/home/javierdr/IDS-TFG/src/detection/intrusionDetector.cpp \
+	/home/javierdr/IDS-TFG/src/detection/intrusionDetector.h \
 	/home/javierdr/IDS-TFG/src/detection/signatures.cpp \
 	/home/javierdr/IDS-TFG/src/detection/signatures.h \
 	/home/javierdr/IDS-TFG/src/initializeTest/initialize.cpp \
 	/home/javierdr/IDS-TFG/src/initializeTest/initialize.h \
+	/home/javierdr/IDS-TFG/src/libvmiApi/libvmiCalls.cpp \
+	/home/javierdr/IDS-TFG/src/libvmiApi/libvmiCalls.h \
 	/home/javierdr/IDS-TFG/src/main.cpp \
 	/home/javierdr/IDS-TFG/src/mainwindow.cpp \
 	/home/javierdr/IDS-TFG/src/mainwindow.h \
@@ -24,8 +24,8 @@ IDS-TFG_autogen/timestamp: \
 	/home/javierdr/IDS-TFG/src/monitor/fileMonitor/fileMonitor.h \
 	/home/javierdr/IDS-TFG/src/monitor/monitor.cpp \
 	/home/javierdr/IDS-TFG/src/monitor/monitor.h \
-	/home/javierdr/IDS-TFG/src/monitor/process.cpp \
-	/home/javierdr/IDS-TFG/src/monitor/process.h \
+	/home/javierdr/IDS-TFG/src/monitor/processMonitor/processMonitor.cpp \
+	/home/javierdr/IDS-TFG/src/monitor/processMonitor/processMonitor.h \
 	/home/javierdr/IDS-TFG/src/monitor/syscalls.cpp \
 	/home/javierdr/IDS-TFG/src/monitor/syscalls.h \
 	/home/javierdr/IDS-TFG/src/monitor/vmi.cpp \
@@ -438,41 +438,48 @@ IDS-TFG_autogen/timestamp: \
 	/home/javierdr/Qt/6.8.1/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake \
 	/home/javierdr/Qt/6.8.1/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
 	/home/javierdr/Qt/6.8.1/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeParseArguments.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckCXXCompilerFlag.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckIncludeFileCXX.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckLibraryExists.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/FeatureSummary.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindOpenGL.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindOpenSSL.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindPackageMessage.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindPkgConfig.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindThreads.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindVulkan.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/GNUInstallDirs.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CheckFlagCommonConfig.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/MacroAddFileDependencies.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-CXX.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-Initialize.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux.cmake \
-	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeCXXInformation.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeGenericSystem.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeParseArguments.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXSourceCompiles.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckIncludeFileCXX.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckLibraryExists.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Compiler/GNU-CXX.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Compiler/GNU.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/FeatureSummary.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindOpenGL.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindOpenSSL.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindPackageMessage.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindPkgConfig.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindThreads.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindVulkan.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/GNUInstallDirs.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckFlagCommonConfig.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Linker/GNU-CXX.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Linker/GNU.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/MacroAddFileDependencies.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Platform/Linker/GNU.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-CXX.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Platform/Linux-GNU-CXX.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Platform/Linux-GNU.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Platform/Linux-Initialize.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Platform/Linux.cmake \
+	/opt/CLion-2024.3.2/clion-2024.3.2/bin/cmake/linux/x64/share/cmake-3.31/Modules/Platform/UnixPaths.cmake \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/errno-base.h \
 	/usr/include/asm-generic/errno.h \

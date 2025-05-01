@@ -46,22 +46,22 @@ set(PROJECT_SOURCES
         src/core/utils.h
         src/monitor/vmi.cpp
         src/monitor/vmi.h
-        src/monitor/process.cpp
-        src/monitor/process.h
+        src/monitor/processMonitor/processMonitor.cpp
+        src/monitor/processMonitor/processMonitor.h
         src/monitor/syscalls.cpp
         src/monitor/syscalls.h
         src/detection/signatures.cpp
         src/detection/signatures.h
-        src/detection/anomaly.cpp
-        src/detection/anomaly.h
+        src/detection/intrusionDetector.cpp
+        src/detection/intrusionDetector.h
         src/response/mitigation.cpp
         src/response/mitigation.h
         src/response/alerting.cpp
         src/response/alerting.h
         src/monitor/fileMonitor/fileMonitor.cpp
         src/monitor/fileMonitor/fileMonitor.h
-        src/daemonize/daemonize.cpp
-        src/daemonize/daemonize.h
+        src/libvmiApi/libvmiCalls.cpp
+        src/libvmiApi/libvmiCalls.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
