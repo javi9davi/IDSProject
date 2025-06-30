@@ -3,138 +3,153 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <algorithm>
-#include <filesystem>
+#include <thread>
+#include <experimental/filesystem>
 #include <utility>
-#include <libvmi/libvmi.h>
+#include <libvirt/libvirt-qemu.h>
+#include <libvirt/libvirt.h>
+#include <nlohmann/json.hpp>
+#include <openssl/sha.h>
+#include <iomanip>
+#include "../../detection/signatures.h"
 
-ProcessMonitor::ProcessMonitor(std::string  vmName, const virConnectPtr &conn, const vmi_instance_t &vmi)
-    : vmName(std::move(vmName)), vmi(vmi), conn(conn) {}
+namespace fs = std::experimental::filesystem;
+using json = nlohmann::json;
 
-ProcessMonitor::~ProcessMonitor() {
-    if (vmi) {
-        vmi_destroy(vmi);
+ProcessMonitor::ProcessMonitor(std::string vmName, const virConnectPtr &conn)
+    : vmName(std::move(vmName)), conn(conn) {}
+
+std::string decodeBase64(const std::string& encoded);
+
+std::string computeSHA256(const std::string& input) {
+    unsigned char hash[SHA256_DIGEST_LENGTH];
+    SHA256(reinterpret_cast<const unsigned char*>(input.c_str()), input.size(), hash);
+
+    std::ostringstream oss;
+    for (unsigned char c : hash) {
+        oss << std::hex << std::setw(2) << std::setfill('0') << (int)c;
     }
+
+    return oss.str();
 }
 
-void ProcessMonitor::setVMI(const vmi_instance_t &vmi) {
-    this->vmi = vmi;
+std::unique_ptr<virDomain, decltype(&virDomainFree)> ProcessMonitor::getDomain() const {
+    virDomainPtr dom = virDomainLookupByName(conn, vmName.c_str());
+    return std::unique_ptr<virDomain, decltype(&virDomainFree)>(dom, virDomainFree);
 }
 
 bool ProcessMonitor::fetchProcessList(std::unordered_map<int, std::string>& snapshot) const {
     snapshot.clear();
-
-    addr_t list_head = 0;
-    addr_t current_process = 0;
-    addr_t next_process = 0;
-
-    unsigned long tasks_offset = 0, pid_offset = 0, name_offset = 0;
-
-    if ((vmi_get_offset(vmi, "linux_tasks", &tasks_offset)) != VMI_SUCCESS) {
-        std::cerr << "[ERROR] No se pudo obtener el offset de tasks" << std::endl;
-        return false;
-    }
-    if ((vmi_get_offset(vmi, "linux_pid", &pid_offset)) != VMI_SUCCESS) {
-        std::cerr << "[ERROR] No se pudo obtener el offset de pid" << std::endl;
-        return false;
-    }
-    if ((vmi_get_offset(vmi, "linux_name", &name_offset)) != VMI_SUCCESS) {
-        std::cerr << "[ERROR] No se pudo obtener el offset de name" << std::endl;
+    auto dom = getDomain();
+    if (!dom) {
+        std::cerr << "[ERROR] VM not found: " << vmName << std::endl;
         return false;
     }
 
-    if (vmi_translate_ksym2v(vmi, "init_task", &list_head) != VMI_SUCCESS) {
-        std::cerr << "[ERROR] No se pudo traducir init_task." << std::endl;
-        return false;
-    }
-
-    current_process = list_head;
-    if (vmi_read_addr_va(vmi, current_process + tasks_offset, 0, &next_process) != VMI_SUCCESS)
-        return false;
-
-    do {
-        const addr_t task_struct = current_process - tasks_offset;
-        int pid = 0;
-        char* name = vmi_read_str_va(vmi, task_struct + name_offset, 0);
-        if (!name) {
-            break;
+    const char *cmd = R"({
+        "execute": "guest-exec",
+        "arguments": {
+            "path": "/bin/ps",
+            "arg": ["-e", "-o", "pid=,comm="],
+            "capture-output": true
         }
-        snapshot[pid] = name;
-        free(name);
+    })";
 
+    char *result = virDomainQemuAgentCommand(dom.get(), cmd, 10, 0);
+    if (!result) {
+        std::cerr << "[ERROR] No response from guest-exec for VM: " << vmName << std::endl;
+        return false;
+    }
 
-        current_process = next_process;
-        if (vmi_read_addr_va(vmi, current_process + tasks_offset, 0, &next_process) != VMI_SUCCESS)
-            break;
+    json root;
+    try {
+        root = json::parse(result);
+        free(result);
+    } catch (const json::exception &e) {
+        std::cerr << "[ERROR] JSON parse error: " << e.what() << std::endl;
+        free(result);
+        return false;
+    }
 
-    } while (current_process != list_head);
+    int guestPid = root["return"].value("pid", -1);
+    if (guestPid == -1) {
+        std::cerr << "[ERROR] Invalid PID returned" << std::endl;
+        return false;
+    }
+
+    std::string output;
+    if (!waitForExecutionCompletion(dom.get(), guestPid, output)) return false;
+
+    parseProcessList(output, snapshot);
 
     return true;
 }
 
-bool ProcessMonitor::hasProcessChanged() {
-    std::unordered_map<int, std::string> currentSnapshot;
-    if (!fetchProcessList(currentSnapshot)) return false;
+bool ProcessMonitor::waitForExecutionCompletion(virDomainPtr dom, int pid, std::string& output) const {
+    while (true) {
+        std::ostringstream pollCmd;
+        pollCmd << R"({"execute":"guest-exec-status","arguments":{"pid":)" << pid << "}}";
 
-    if (currentSnapshot != lastSnapshot) {
-        lastSnapshot = currentSnapshot;
-        return true;
+        char *result = virDomainQemuAgentCommand(dom, pollCmd.str().c_str(), 10, 0);
+        if (!result) {
+            std::cerr << "[ERROR] Failed guest-exec-status" << std::endl;
+            return false;
+        }
+
+        json status = json::parse(result)["return"];
+        free(result);
+
+        if (status["exited"].get<bool>()) {
+            if (status.contains("out-data")) {
+                output = decodeBase64(status["out-data"]);
+                return true;
+            }
+            std::cerr << "[ERROR] No output captured" << std::endl;
+            return false;
+        }
+
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
-
-    return false;
 }
 
-void ProcessMonitor::storeProcessSnapshot() {
-    std::unordered_map<int, std::string> snapshot;
-    if (!fetchProcessList(snapshot)) return;
-
-    std::string path = generateSnapshotPath(vmName);
-    std::ofstream out(path);
-    if (!out.is_open()) {
-        std::cerr << "[ERROR] No se pudo abrir el archivo de snapshot: " << path << std::endl;
-        return;
-    }
-
-    for (const auto& [pid, name] : snapshot) {
-        out << pid << ":" << name << "\n";
-    }
-
-    lastSnapshot = snapshot;
-    std::cout << "[INFO] Snapshot de procesos almacenado para VM: " << vmName << std::endl;
-}
-
-void ProcessMonitor::loadStoredSnapshot() {
-    lastSnapshot.clear();
-    std::string path = generateSnapshotPath(vmName);
-    std::ifstream in(path);
-    if (!in.is_open()) {
-        std::cerr << "[WARN] No se encontró snapshot previo: " << path << std::endl;
-        return;
-    }
-
+void ProcessMonitor::parseProcessList(const std::string& output, std::unordered_map<int, std::string>& snapshot) const {
+    std::istringstream iss(output);
     std::string line;
-    while (std::getline(in, line)) {
-        std::istringstream iss(line);
-        std::string pid_str, name;
-        if (std::getline(iss, pid_str, ':') && std::getline(iss, name)) {
-            int pid = std::stoi(pid_str);
-            lastSnapshot[pid] = name;
+    while (std::getline(iss, line)) {
+        std::istringstream ls(line);
+        int pid;
+        std::string name;
+        if (ls >> pid >> name) {
+            snapshot[pid] = name;
         }
     }
-
-    std::cout << "[INFO] Snapshot previo cargado para VM: " << vmName << std::endl;
 }
 
-void ProcessMonitor::printCurrentProcesses() const {
+bool ProcessMonitor::checkProcessesWithBazaarAPI() {
     std::unordered_map<int, std::string> snapshot;
-    if (!fetchProcessList(snapshot)) return;
+    if (!fetchProcessList(snapshot)) return false;
 
-    std::cout << "\n[Procesos actuales en " << vmName << "]\n";
+    bool foundMalicious = false;
+
     for (const auto& [pid, name] : snapshot) {
-        std::cout << "PID: " << pid << "\tNombre: " << name << std::endl;
+        std::string hash = computeSHA256(name);
+        json api_response;
+
+        if (queryMalwareBazaar(hash, api_response)) {
+            if (api_response.contains("query_status") && api_response["query_status"] == "ok") {
+                std::cerr << "[ALERTA] Malware detected: PID=" << pid << " NAME=" << name << " HASH=" << hash << std::endl;
+                foundMalicious = true;
+            } else {
+                std::cout << "[INFO] Clean process: " << name << std::endl;
+            }
+        }
+        std::this_thread::sleep_for(std::chrono::milliseconds(10000));
     }
+    return foundMalicious;
 }
 
-std::string ProcessMonitor::generateSnapshotPath(const std::string& vmName) {
-    return "snapshots/" + vmName + "_processes.snapshot";
+std::string ProcessMonitor::generateSnapshotPath() const {
+    fs::path dir = "snapshots";
+    fs::create_directories(dir);
+    return (dir / (vmName + "_processes.snapshot")).string();
 }

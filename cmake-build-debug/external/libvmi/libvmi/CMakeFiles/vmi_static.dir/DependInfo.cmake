@@ -1,0 +1,23 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  )
+
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/javier/CLionProjects/IDSProject/cmake-build-debug/external/libvmi/libvmi/vmi_static_autogen/mocs_compilation.cpp" "external/libvmi/libvmi/CMakeFiles/vmi_static.dir/vmi_static_autogen/mocs_compilation.cpp.o" "gcc" "external/libvmi/libvmi/CMakeFiles/vmi_static.dir/vmi_static_autogen/mocs_compilation.cpp.o.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

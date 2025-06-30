@@ -3,10 +3,8 @@
 
 #include <string>
 #include <unordered_map>
-#include <filesystem>
 #include <utility>
 #include <libvirt/libvirt.h>
-#include <libvirt/virterror.h>
 
 #include "../../core/config.h"
 
@@ -22,6 +20,8 @@ public:
     bool hasFileChanged();
 
     bool isHashStored(const std::string &file_path);
+
+    bool requiresInitialization() const;
 
     void initializeVMHashes();
 

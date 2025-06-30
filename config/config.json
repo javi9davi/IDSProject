@@ -16,7 +16,6 @@
     "Monitor_Processes": true,
     "Monitor_Syscalls": false,
     "Files2Watch": [
-      "/home/user/Escritorio/prueba.txt",
       "/etc/passwd",
       "/etc/shadow"
     ]

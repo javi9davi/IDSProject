@@ -1,0 +1,1 @@
+/usr/bin/c++ -g  -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -rdynamic "CMakeFiles/vmi-dmesg.dir/vmi-dmesg_autogen/mocs_compilation.cpp.o" "CMakeFiles/vmi-dmesg.dir/dmesg.c.o" -o vmi-dmesg  -Wl,-rpath,/home/javier/CLionProjects/IDSProject/cmake-build-debug/external/libvmi/libvmi: ../libvmi/libvmi.so.0.0.15 -lglib-2.0 -lz -ljson-c

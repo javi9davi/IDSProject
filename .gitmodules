@@ -1,0 +1,3 @@
+[submodule "external/libvmi"]
+	path = external/libvmi
+	url = https://github.com/libvmi/libvmi.git

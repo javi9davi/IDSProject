@@ -43,10 +43,8 @@ void IntrusionDetector::detectProcessAnomalies() const {
 std::unordered_map<int, std::string> IntrusionDetector::getGuestProcesses() {
     std::unordered_map<int, std::string> guestProcesses;
 
-    // Aquí deberías usar el QEMU guest agent (o, si no está disponible, otras técnicas)
-    // Simplificado aquí como ejemplo:
-
-    // NOTA: Para hacerlo real deberías consultar /proc desde guest agent
+    // Aquí se debe usar el QEMU guest agent
+    // consultar /proc desde guest agent
     // o montar imagen si el agente no está disponible
 
     std::cerr << "[WARN] Función getGuestProcesses() no implementada en producción.\n";

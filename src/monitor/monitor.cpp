@@ -1,9 +1,7 @@
 #include "monitor.h"
 #include <iostream>
 #include <utility>
-#include <vector>
 #include <libvirt/libvirt-domain.h>
-#include <libvmi/libvmi.h>
 #include <json-c/json.h>
 #include <libvirt/libvirt.h>
 #include <libvirt/libvirt-qemu.h>
@@ -11,25 +9,14 @@
 #include <chrono>
 #include <openssl/bio.h>
 #include <openssl/evp.h>
-#include "../libvmiApi/libvmiCalls.h"
+#include <glib.h>
 
 Monitor::Monitor(std::string  vm_name, const virConnectPtr &conn)
-    : vm_name(std::move(vm_name)), conn(conn), vmi(nullptr) {}
+    : vm_name(std::move(vm_name)), conn(conn) {}
 
 
-Monitor::~Monitor() {
-    if (vmi) {
-        vmi_destroy(vmi);  // Liberar recursos de LibVMI
-        std::cout << "LibVMI cerrado correctamente." << std::endl;
-    }
-}
-
-vmi_instance_t Monitor::get_vmi() const {
-    return vmi;
-}
-
-
-bool Monitor::initialize() {
+bool Monitor::initialize()
+{
     if (!conn) {
         std::cerr << "[ERROR] Conexión con libvirt no inicializada." << std::endl;
         return false;
@@ -46,44 +33,7 @@ bool Monitor::initialize() {
         std::cerr << "[ERROR] No se pudo obtener el kernel de la VM: " << vm_name << std::endl;
         return false;
     }
-
-    if (!generateProfileAndConfigureLibVMI(kernelName, vm_name)) {
-        std::cerr << "[ERROR] No se pudo generar el perfil LibVMI para la VM: " << vm_name << std::endl;
-        return false;
-    }
-
-    vmi_init_error_t error_info;
-    status_t status = vmi_init_complete(
-        &vmi,
-        vm_name.c_str(),
-        VMI_INIT_DOMAINNAME,
-        nullptr,
-        VMI_CONFIG_GLOBAL_FILE_ENTRY,
-        nullptr,
-        &error_info
-    );
-
-    if (status == VMI_SUCCESS) {
-        std::cout << "[INFO] Conexión establecida con la VM: " << vm_name << std::endl;
-        return true;
-    }
-
-    std::cerr << "[ERROR] Falló la inicialización de LibVMI para: " << vm_name << std::endl;
-
-    switch (error_info) {
-        case VMI_INIT_ERROR_NONE: std::cerr << "No error.\n"; break;
-        case VMI_INIT_ERROR_DRIVER_NOT_DETECTED: std::cerr << "Hypervisor no detectado.\n"; break;
-        case VMI_INIT_ERROR_DRIVER: std::cerr << "Error con driver de LibVMI.\n"; break;
-        case VMI_INIT_ERROR_VM_NOT_FOUND: std::cerr << "VM no encontrada.\n"; break;
-        case VMI_INIT_ERROR_PAGING: std::cerr << "Error en paginación.\n"; break;
-        case VMI_INIT_ERROR_OS: std::cerr << "Error en funciones de SO.\n"; break;
-        case VMI_INIT_ERROR_EVENTS: std::cerr << "Error inicializando eventos.\n"; break;
-        case VMI_INIT_ERROR_NO_CONFIG: std::cerr << "No hay configuración de SO.\n"; break;
-        case VMI_INIT_ERROR_NO_CONFIG_ENTRY: std::cerr << "No hay entrada en vmi.conf.\n"; break;
-        default: std::cerr << "Error desconocido.\n"; break;
-    }
-
-    return false;
+    return true;
 }
 
 
@@ -188,5 +138,8 @@ std::string Monitor::getKernelName(virDomainPtr domain) const {
     }
 
     decoded.resize(decodedLen);
+
+    decoded.erase(decoded.find_last_not_of(" \n\r\t") + 1);
+
     return decoded;
 }
