@@ -14,7 +14,6 @@ public:
     std::vector<std::string> get_vm_names();
     void monitor_vms() const;
     virConnectPtr get_connection(); // Obtener conexión
-
 private:
     virConnectPtr conn;
 };

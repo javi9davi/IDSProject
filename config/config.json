@@ -17,8 +17,21 @@
     "Monitor_Syscalls": false,
     "Files2Watch": [
       "/etc/passwd",
-      "/etc/shadow"
-    ]
+      "/etc/shadow",
+      "/etc/group",
+      "/etc/gshadow",
+      "/etc/sudoers",
+      "/etc/hostname",
+      "/etc/hosts",
+      "/etc/resolv.conf",
+      "/etc/profile",
+      "/etc/bash.bashrc",
+      "/etc/crontab",
+      "/etc/hosts.allow",
+      "/etc/hosts.deny",
+      "/etc/ufw/ufw.conf"
+    ],
+    "Guest_File_Path": "/tmp/IDS-TFG/"
   },
   "Response": {
     "Enable_Alerting": true,
@@ -27,8 +40,22 @@
     "Kill_Suspicious_Processes": true
   },
   "Network": {
-    "Monitor_Traffic": true,
-    "Traffic_Capture_Interface": "eth0",
-    "Traffic_Threshold": 1000000
+    "Interface": "red-central",
+    "Filters": [
+      {
+        "protocol": "tcp",
+        "ports": [22, 80, 443]
+      },
+      {
+        "protocol": "udp",
+        "port_range": [1000, 2000]
+      },
+      {
+        "ip": "10.0.0.0/8",
+        "protocol": "tcp",
+        "ports": [23]
+      }
+    ]
   }
 }
+

@@ -20,7 +20,7 @@ class MonitorUI : public QMainWindow {
 
 public:
     explicit MonitorUI(QWidget* parent = nullptr);
-    ~MonitorUI();
+    ~MonitorUI() override;
 
 public slots:
     void updateVMs();

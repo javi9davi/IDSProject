@@ -12,7 +12,7 @@ public:
     void startServer(quint16 port = 5555);
 
     signals:
-        void alertReceived(QJsonObject alert); // puedes conectar esto a la GUI
+        void alertReceived(QJsonObject alert);
 
 protected:
     void incomingConnection(qintptr socketDescriptor) override;

@@ -14,7 +14,7 @@ IntrusionDetector::IntrusionDetector(std::shared_ptr<ProcessMonitor> processMoni
 
 std::unordered_map<int, std::string> IntrusionDetector::getProcesses() const {
     std::unordered_map<int, std::string> processes;
-    processMonitor->fetchProcessList(processes);
+    processMonitor->fetchProcessList(TODO);
     return processes;
 }
 

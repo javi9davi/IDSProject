@@ -53,10 +53,10 @@ RM = /home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javier/CLionProjects/IDSProject
+CMAKE_SOURCE_DIR = /root/CLionProjects/IDSProject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javier/CLionProjects/IDSProject/cmake-build-debug
+CMAKE_BINARY_DIR = /root/CLionProjects/IDSProject/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/IDS-TFG.dir/depend.make
@@ -69,280 +69,361 @@ include CMakeFiles/IDS-TFG.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/IDS-TFG.dir/flags.make
 
+IDS-TFG_autogen/timestamp: /usr/lib/qt6/libexec/moc
+IDS-TFG_autogen/timestamp: /usr/lib/qt6/libexec/uic
+IDS-TFG_autogen/timestamp: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target IDS-TFG"
+	/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E cmake_autogen /root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles/IDS-TFG_autogen.dir/AutogenInfo.json Debug
+	/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E touch /root/CLionProjects/IDSProject/cmake-build-debug/IDS-TFG_autogen/timestamp
+
 CMakeFiles/IDS-TFG.dir/codegen:
 .PHONY : CMakeFiles/IDS-TFG.dir/codegen
 
 CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
 CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.o: IDS-TFG_autogen/mocs_compilation.cpp
 CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.o -MF CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.o -c /home/javier/CLionProjects/IDSProject/cmake-build-debug/IDS-TFG_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.o -MF CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.o -c /root/CLionProjects/IDSProject/cmake-build-debug/IDS-TFG_autogen/mocs_compilation.cpp
 
 CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javier/CLionProjects/IDSProject/cmake-build-debug/IDS-TFG_autogen/mocs_compilation.cpp > CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/cmake-build-debug/IDS-TFG_autogen/mocs_compilation.cpp > CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javier/CLionProjects/IDSProject/cmake-build-debug/IDS-TFG_autogen/mocs_compilation.cpp -o CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/cmake-build-debug/IDS-TFG_autogen/mocs_compilation.cpp -o CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/IDS-TFG.dir/src/main.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
-CMakeFiles/IDS-TFG.dir/src/main.cpp.o: /home/javier/CLionProjects/IDSProject/src/main.cpp
+CMakeFiles/IDS-TFG.dir/src/main.cpp.o: /root/CLionProjects/IDSProject/src/main.cpp
 CMakeFiles/IDS-TFG.dir/src/main.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/IDS-TFG.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/main.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/main.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/main.cpp.o -c /home/javier/CLionProjects/IDSProject/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/IDS-TFG.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/main.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/main.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/main.cpp.o -c /root/CLionProjects/IDSProject/src/main.cpp
 
 CMakeFiles/IDS-TFG.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javier/CLionProjects/IDSProject/src/main.cpp > CMakeFiles/IDS-TFG.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/main.cpp > CMakeFiles/IDS-TFG.dir/src/main.cpp.i
 
 CMakeFiles/IDS-TFG.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javier/CLionProjects/IDSProject/src/main.cpp -o CMakeFiles/IDS-TFG.dir/src/main.cpp.s
-
-CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
-CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o: /home/javier/CLionProjects/IDSProject/src/mainwindow.cpp
-CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o -c /home/javier/CLionProjects/IDSProject/src/mainwindow.cpp
-
-CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javier/CLionProjects/IDSProject/src/mainwindow.cpp > CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.i
-
-CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javier/CLionProjects/IDSProject/src/mainwindow.cpp -o CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.s
-
-CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
-CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o: /home/javier/CLionProjects/IDSProject/src/core/config.cpp
-CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o -c /home/javier/CLionProjects/IDSProject/src/core/config.cpp
-
-CMakeFiles/IDS-TFG.dir/src/core/config.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/core/config.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javier/CLionProjects/IDSProject/src/core/config.cpp > CMakeFiles/IDS-TFG.dir/src/core/config.cpp.i
-
-CMakeFiles/IDS-TFG.dir/src/core/config.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/core/config.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javier/CLionProjects/IDSProject/src/core/config.cpp -o CMakeFiles/IDS-TFG.dir/src/core/config.cpp.s
-
-CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
-CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o: /home/javier/CLionProjects/IDSProject/src/core/logger.cpp
-CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o -c /home/javier/CLionProjects/IDSProject/src/core/logger.cpp
-
-CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javier/CLionProjects/IDSProject/src/core/logger.cpp > CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.i
-
-CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javier/CLionProjects/IDSProject/src/core/logger.cpp -o CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.s
-
-CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
-CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o: /home/javier/CLionProjects/IDSProject/src/core/utils.cpp
-CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o -c /home/javier/CLionProjects/IDSProject/src/core/utils.cpp
-
-CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javier/CLionProjects/IDSProject/src/core/utils.cpp > CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.i
-
-CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javier/CLionProjects/IDSProject/src/core/utils.cpp -o CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.s
-
-CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
-CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o: /home/javier/CLionProjects/IDSProject/src/initializeTest/initialize.cpp
-CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o -c /home/javier/CLionProjects/IDSProject/src/initializeTest/initialize.cpp
-
-CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javier/CLionProjects/IDSProject/src/initializeTest/initialize.cpp > CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.i
-
-CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javier/CLionProjects/IDSProject/src/initializeTest/initialize.cpp -o CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.s
-
-CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
-CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o: /home/javier/CLionProjects/IDSProject/src/monitor/monitor.cpp
-CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o -c /home/javier/CLionProjects/IDSProject/src/monitor/monitor.cpp
-
-CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javier/CLionProjects/IDSProject/src/monitor/monitor.cpp > CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.i
-
-CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javier/CLionProjects/IDSProject/src/monitor/monitor.cpp -o CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.s
-
-CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
-CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o: /home/javier/CLionProjects/IDSProject/src/monitor/syscalls.cpp
-CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o -c /home/javier/CLionProjects/IDSProject/src/monitor/syscalls.cpp
-
-CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javier/CLionProjects/IDSProject/src/monitor/syscalls.cpp > CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.i
-
-CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javier/CLionProjects/IDSProject/src/monitor/syscalls.cpp -o CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.s
-
-CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
-CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o: /home/javier/CLionProjects/IDSProject/src/monitor/fileMonitor/fileMonitor.cpp
-CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o -c /home/javier/CLionProjects/IDSProject/src/monitor/fileMonitor/fileMonitor.cpp
-
-CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javier/CLionProjects/IDSProject/src/monitor/fileMonitor/fileMonitor.cpp > CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.i
-
-CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javier/CLionProjects/IDSProject/src/monitor/fileMonitor/fileMonitor.cpp -o CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.s
-
-CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
-CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o: /home/javier/CLionProjects/IDSProject/src/monitor/processMonitor/processMonitor.cpp
-CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o -c /home/javier/CLionProjects/IDSProject/src/monitor/processMonitor/processMonitor.cpp
-
-CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javier/CLionProjects/IDSProject/src/monitor/processMonitor/processMonitor.cpp > CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.i
-
-CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javier/CLionProjects/IDSProject/src/monitor/processMonitor/processMonitor.cpp -o CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.s
-
-CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
-CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o: /home/javier/CLionProjects/IDSProject/src/detection/signatures.cpp
-CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o -c /home/javier/CLionProjects/IDSProject/src/detection/signatures.cpp
-
-CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javier/CLionProjects/IDSProject/src/detection/signatures.cpp > CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.i
-
-CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javier/CLionProjects/IDSProject/src/detection/signatures.cpp -o CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.s
-
-CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
-CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o: /home/javier/CLionProjects/IDSProject/src/response/mitigation.cpp
-CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o -c /home/javier/CLionProjects/IDSProject/src/response/mitigation.cpp
-
-CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javier/CLionProjects/IDSProject/src/response/mitigation.cpp > CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.i
-
-CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javier/CLionProjects/IDSProject/src/response/mitigation.cpp -o CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.s
-
-CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
-CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.o: /home/javier/CLionProjects/IDSProject/src/response/alerting.cpp
-CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.o -c /home/javier/CLionProjects/IDSProject/src/response/alerting.cpp
-
-CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javier/CLionProjects/IDSProject/src/response/alerting.cpp > CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.i
-
-CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javier/CLionProjects/IDSProject/src/response/alerting.cpp -o CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.s
-
-CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
-CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o: /home/javier/CLionProjects/IDSProject/src/monitor/MonitorThread.cpp
-CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o -c /home/javier/CLionProjects/IDSProject/src/monitor/MonitorThread.cpp
-
-CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javier/CLionProjects/IDSProject/src/monitor/MonitorThread.cpp > CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.i
-
-CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javier/CLionProjects/IDSProject/src/monitor/MonitorThread.cpp -o CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/main.cpp -o CMakeFiles/IDS-TFG.dir/src/main.cpp.s
 
 CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
-CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.o: /home/javier/CLionProjects/IDSProject/src/monitorui.cpp
+CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.o: /root/CLionProjects/IDSProject/src/monitorui.cpp
 CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.o -c /home/javier/CLionProjects/IDSProject/src/monitorui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.o -c /root/CLionProjects/IDSProject/src/monitorui.cpp
 
 CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/javier/CLionProjects/IDSProject/src/monitorui.cpp > CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/monitorui.cpp > CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.i
 
 CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/javier/CLionProjects/IDSProject/src/monitorui.cpp -o CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/monitorui.cpp -o CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o: /root/CLionProjects/IDSProject/src/mainwindow.cpp
+CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o -c /root/CLionProjects/IDSProject/src/mainwindow.cpp
+
+CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/mainwindow.cpp > CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/mainwindow.cpp -o CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o: /root/CLionProjects/IDSProject/src/monitor/MonitorThread.cpp
+CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o -c /root/CLionProjects/IDSProject/src/monitor/MonitorThread.cpp
+
+CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/monitor/MonitorThread.cpp > CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/monitor/MonitorThread.cpp -o CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o: /root/CLionProjects/IDSProject/src/monitor/processMonitor/processMonitor.cpp
+CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o -c /root/CLionProjects/IDSProject/src/monitor/processMonitor/processMonitor.cpp
+
+CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/monitor/processMonitor/processMonitor.cpp > CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/monitor/processMonitor/processMonitor.cpp -o CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o: /root/CLionProjects/IDSProject/src/monitor/monitor.cpp
+CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o -c /root/CLionProjects/IDSProject/src/monitor/monitor.cpp
+
+CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/monitor/monitor.cpp > CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/monitor/monitor.cpp -o CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.o: /root/CLionProjects/IDSProject/src/monitor/vmi.cpp
+CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.o -c /root/CLionProjects/IDSProject/src/monitor/vmi.cpp
+
+CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/monitor/vmi.cpp > CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/monitor/vmi.cpp -o CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o: /root/CLionProjects/IDSProject/src/monitor/syscalls.cpp
+CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o -c /root/CLionProjects/IDSProject/src/monitor/syscalls.cpp
+
+CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/monitor/syscalls.cpp > CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/monitor/syscalls.cpp -o CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o: /root/CLionProjects/IDSProject/src/monitor/fileMonitor/fileMonitor.cpp
+CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o -c /root/CLionProjects/IDSProject/src/monitor/fileMonitor/fileMonitor.cpp
+
+CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/monitor/fileMonitor/fileMonitor.cpp > CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/monitor/fileMonitor/fileMonitor.cpp -o CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o: /root/CLionProjects/IDSProject/src/initializeTest/initialize.cpp
+CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o -c /root/CLionProjects/IDSProject/src/initializeTest/initialize.cpp
+
+CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/initializeTest/initialize.cpp > CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/initializeTest/initialize.cpp -o CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o: /root/CLionProjects/IDSProject/src/core/config.cpp
+CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o -c /root/CLionProjects/IDSProject/src/core/config.cpp
+
+CMakeFiles/IDS-TFG.dir/src/core/config.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/core/config.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/core/config.cpp > CMakeFiles/IDS-TFG.dir/src/core/config.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/core/config.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/core/config.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/core/config.cpp -o CMakeFiles/IDS-TFG.dir/src/core/config.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o: /root/CLionProjects/IDSProject/src/core/logger.cpp
+CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o -c /root/CLionProjects/IDSProject/src/core/logger.cpp
+
+CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/core/logger.cpp > CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/core/logger.cpp -o CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o: /root/CLionProjects/IDSProject/src/core/utils.cpp
+CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o -c /root/CLionProjects/IDSProject/src/core/utils.cpp
+
+CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/core/utils.cpp > CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/core/utils.cpp -o CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o: /root/CLionProjects/IDSProject/src/detection/signatures.cpp
+CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o -c /root/CLionProjects/IDSProject/src/detection/signatures.cpp
+
+CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/detection/signatures.cpp > CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/detection/signatures.cpp -o CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o: /root/CLionProjects/IDSProject/src/response/mitigation.cpp
+CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o -c /root/CLionProjects/IDSProject/src/response/mitigation.cpp
+
+CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/response/mitigation.cpp > CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/response/mitigation.cpp -o CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/backend/ids_backend_service.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/backend/ids_backend_service.cpp.o: /root/CLionProjects/IDSProject/src/backend/ids_backend_service.cpp
+CMakeFiles/IDS-TFG.dir/src/backend/ids_backend_service.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/IDS-TFG.dir/src/backend/ids_backend_service.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/backend/ids_backend_service.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/backend/ids_backend_service.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/backend/ids_backend_service.cpp.o -c /root/CLionProjects/IDSProject/src/backend/ids_backend_service.cpp
+
+CMakeFiles/IDS-TFG.dir/src/backend/ids_backend_service.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/backend/ids_backend_service.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/backend/ids_backend_service.cpp > CMakeFiles/IDS-TFG.dir/src/backend/ids_backend_service.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/backend/ids_backend_service.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/backend/ids_backend_service.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/backend/ids_backend_service.cpp -o CMakeFiles/IDS-TFG.dir/src/backend/ids_backend_service.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/initializeTest/vm_utils.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/initializeTest/vm_utils.cpp.o: /root/CLionProjects/IDSProject/src/initializeTest/vm_utils.cpp
+CMakeFiles/IDS-TFG.dir/src/initializeTest/vm_utils.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/IDS-TFG.dir/src/initializeTest/vm_utils.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/initializeTest/vm_utils.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/initializeTest/vm_utils.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/initializeTest/vm_utils.cpp.o -c /root/CLionProjects/IDSProject/src/initializeTest/vm_utils.cpp
+
+CMakeFiles/IDS-TFG.dir/src/initializeTest/vm_utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/initializeTest/vm_utils.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/initializeTest/vm_utils.cpp > CMakeFiles/IDS-TFG.dir/src/initializeTest/vm_utils.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/initializeTest/vm_utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/initializeTest/vm_utils.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/initializeTest/vm_utils.cpp -o CMakeFiles/IDS-TFG.dir/src/initializeTest/vm_utils.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/backend/SqliteHashDB.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/backend/SqliteHashDB.cpp.o: /root/CLionProjects/IDSProject/src/backend/SqliteHashDB.cpp
+CMakeFiles/IDS-TFG.dir/src/backend/SqliteHashDB.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/IDS-TFG.dir/src/backend/SqliteHashDB.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/backend/SqliteHashDB.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/backend/SqliteHashDB.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/backend/SqliteHashDB.cpp.o -c /root/CLionProjects/IDSProject/src/backend/SqliteHashDB.cpp
+
+CMakeFiles/IDS-TFG.dir/src/backend/SqliteHashDB.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/backend/SqliteHashDB.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/backend/SqliteHashDB.cpp > CMakeFiles/IDS-TFG.dir/src/backend/SqliteHashDB.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/backend/SqliteHashDB.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/backend/SqliteHashDB.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/backend/SqliteHashDB.cpp -o CMakeFiles/IDS-TFG.dir/src/backend/SqliteHashDB.cpp.s
+
+CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.o: CMakeFiles/IDS-TFG.dir/flags.make
+CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.o: /root/CLionProjects/IDSProject/src/monitor/processMonitor/dumpGuestFile.cpp
+CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.o: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.o -MF CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.o.d -o CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.o -c /root/CLionProjects/IDSProject/src/monitor/processMonitor/dumpGuestFile.cpp
+
+CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CLionProjects/IDSProject/src/monitor/processMonitor/dumpGuestFile.cpp > CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.i
+
+CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CLionProjects/IDSProject/src/monitor/processMonitor/dumpGuestFile.cpp -o CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.s
 
 # Object files for target IDS-TFG
 IDS__TFG_OBJECTS = \
 "CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/IDS-TFG.dir/src/main.cpp.o" \
+"CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.o" \
 "CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o" \
+"CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o" \
+"CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o" \
+"CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o" \
+"CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.o" \
+"CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o" \
+"CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o" \
+"CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o" \
 "CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o" \
 "CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o" \
 "CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o" \
-"CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o" \
-"CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o" \
-"CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o" \
-"CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o" \
-"CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o" \
 "CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o" \
 "CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o" \
-"CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.o" \
-"CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o" \
-"CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.o"
+"CMakeFiles/IDS-TFG.dir/src/backend/ids_backend_service.cpp.o" \
+"CMakeFiles/IDS-TFG.dir/src/initializeTest/vm_utils.cpp.o" \
+"CMakeFiles/IDS-TFG.dir/src/backend/SqliteHashDB.cpp.o" \
+"CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.o"
 
 # External object files for target IDS-TFG
 IDS__TFG_EXTERNAL_OBJECTS =
 
 IDS-TFG: CMakeFiles/IDS-TFG.dir/IDS-TFG_autogen/mocs_compilation.cpp.o
 IDS-TFG: CMakeFiles/IDS-TFG.dir/src/main.cpp.o
+IDS-TFG: CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.o
 IDS-TFG: CMakeFiles/IDS-TFG.dir/src/mainwindow.cpp.o
+IDS-TFG: CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o
+IDS-TFG: CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o
+IDS-TFG: CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o
+IDS-TFG: CMakeFiles/IDS-TFG.dir/src/monitor/vmi.cpp.o
+IDS-TFG: CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o
+IDS-TFG: CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o
+IDS-TFG: CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o
 IDS-TFG: CMakeFiles/IDS-TFG.dir/src/core/config.cpp.o
 IDS-TFG: CMakeFiles/IDS-TFG.dir/src/core/logger.cpp.o
 IDS-TFG: CMakeFiles/IDS-TFG.dir/src/core/utils.cpp.o
-IDS-TFG: CMakeFiles/IDS-TFG.dir/src/initializeTest/initialize.cpp.o
-IDS-TFG: CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o
-IDS-TFG: CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o
-IDS-TFG: CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o
-IDS-TFG: CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o
 IDS-TFG: CMakeFiles/IDS-TFG.dir/src/detection/signatures.cpp.o
 IDS-TFG: CMakeFiles/IDS-TFG.dir/src/response/mitigation.cpp.o
-IDS-TFG: CMakeFiles/IDS-TFG.dir/src/response/alerting.cpp.o
-IDS-TFG: CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o
-IDS-TFG: CMakeFiles/IDS-TFG.dir/src/monitorui.cpp.o
+IDS-TFG: CMakeFiles/IDS-TFG.dir/src/backend/ids_backend_service.cpp.o
+IDS-TFG: CMakeFiles/IDS-TFG.dir/src/initializeTest/vm_utils.cpp.o
+IDS-TFG: CMakeFiles/IDS-TFG.dir/src/backend/SqliteHashDB.cpp.o
+IDS-TFG: CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.o
 IDS-TFG: CMakeFiles/IDS-TFG.dir/build.make
-IDS-TFG: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.9.5
+IDS-TFG: CMakeFiles/IDS-TFG.dir/compiler_depend.ts
+IDS-TFG: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
+IDS-TFG: /usr/lib/x86_64-linux-gnu/libQt6QuickControls2.so.6.4.2
 IDS-TFG: /usr/lib/x86_64-linux-gnu/libssl.so
 IDS-TFG: /usr/lib/x86_64-linux-gnu/libcrypto.so
 IDS-TFG: /usr/lib/x86_64-linux-gnu/libcurl.so
-IDS-TFG: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.9.5
-IDS-TFG: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.9.5
+IDS-TFG: /usr/lib/x86_64-linux-gnu/libsqlite3.so
+IDS-TFG: /usr/lib/x86_64-linux-gnu/libQt6Quick.so.6.4.2
+IDS-TFG: /usr/lib/x86_64-linux-gnu/libQt6QmlModels.so.6.4.2
+IDS-TFG: /usr/lib/x86_64-linux-gnu/libQt6Qml.so.6.4.2
+IDS-TFG: /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.4.2
+IDS-TFG: /usr/lib/x86_64-linux-gnu/libQt6OpenGL.so.6.4.2
+IDS-TFG: /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2
+IDS-TFG: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
+IDS-TFG: /usr/lib/x86_64-linux-gnu/libGLX.so
+IDS-TFG: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 IDS-TFG: CMakeFiles/IDS-TFG.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable IDS-TFG"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable IDS-TFG"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/IDS-TFG.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -353,7 +434,7 @@ CMakeFiles/IDS-TFG.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/IDS-TFG.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/IDS-TFG.dir/clean
 
-CMakeFiles/IDS-TFG.dir/depend:
-	cd /home/javier/CLionProjects/IDSProject/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javier/CLionProjects/IDSProject /home/javier/CLionProjects/IDSProject /home/javier/CLionProjects/IDSProject/cmake-build-debug /home/javier/CLionProjects/IDSProject/cmake-build-debug /home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles/IDS-TFG.dir/DependInfo.cmake "--color=$(COLOR)"
+CMakeFiles/IDS-TFG.dir/depend: IDS-TFG_autogen/timestamp
+	cd /root/CLionProjects/IDSProject/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/CLionProjects/IDSProject /root/CLionProjects/IDSProject /root/CLionProjects/IDSProject/cmake-build-debug /root/CLionProjects/IDSProject/cmake-build-debug /root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles/IDS-TFG.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/IDS-TFG.dir/depend
 

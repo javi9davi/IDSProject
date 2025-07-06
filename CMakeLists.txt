@@ -1,144 +1,131 @@
 cmake_minimum_required(VERSION 3.16)
 
-cmake_policy(SET CMP0071 NEW)
 project(IDS-TFG VERSION 0.1 LANGUAGES CXX)
-
-# ==================== Configuración del compilador ====================
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# ==================== Dependencias ====================
+# -------------------- LIBVMI --------------------
+include_directories(/home/javierdr/libvmi)
+link_directories(/home/javierdr/libvmi/build)
 
-# Libvirt
+# -------------------- LIBVIRT + GLIB + JSON-C --------------------
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(LIBVIRT REQUIRED libvirt)
-include_directories(${LIBVIRT_INCLUDE_DIRS})
-link_directories(${LIBVIRT_LIBRARY_DIRS})
+pkg_check_modules(GLIB REQUIRED glib-2.0)
 
-# GLib (para GHashTable)
-pkg_check_modules(GLIB2 REQUIRED glib-2.0)
-include_directories(${GLIB2_INCLUDE_DIRS})
-link_directories(${GLIB2_LIBRARY_DIRS})
+include_directories(${LIBVIRT_INCLUDE_DIRS} ${GLIB_INCLUDE_DIRS})
+link_directories(${LIBVIRT_LIBRARY_DIRS} ${GLIB_LIBRARY_DIRS})
 
-# OpenSSL
+# -------------------- OPENSSL --------------------
 find_package(OpenSSL REQUIRED)
 include_directories(${OPENSSL_INCLUDE_DIR})
+link_directories(${OPENSSL_LIBRARIES})
 
-# Hilos
-find_package(Threads REQUIRED)
+# -------------------- Qt6 --------------------
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets Qml Quick QuickControls2)
 
-#API
+# -------------------- CURL --------------------
 find_package(CURL REQUIRED)
+include_directories(${CURL_INCLUDE_DIRS})
 
-# Qt (Widgets y traducción)
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
-find_package(Qt6 REQUIRED COMPONENTS Core Widgets Network)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
-message(STATUS "Found Qt version: ${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}")
+# -------------------- OTROS --------------------
+find_package(tinyxml2 REQUIRED)
+find_package(SQLite3 REQUIRED)
 
-set(ENABLE_KVM ON CACHE BOOL "" FORCE)
-set(ENABLE_XEN OFF CACHE BOOL "" FORCE)
-set(ENABLE_BAREFLANK OFF CACHE BOOL "" FORCE)
-set(ENABLE_STATIC OFF CACHE BOOL "" FORCE)
-set(ENABLE_FREEBSD OFF CACHE BOOL "" FORCE)
-set(ENABLE_OSX OFF CACHE BOOL "" FORCE)
-
-
-# ==================== Archivos fuente ====================
+# -------------------- PROYECTO --------------------
 set(PROJECT_SOURCES
         src/main.cpp
+        src/monitorui.cpp
+        src/monitorui.h
         src/mainwindow.cpp
         src/mainwindow.h
         src/mainwindow.ui
-
+        src/monitor/MonitorThread.cpp
+        src/monitor/MonitorThread.h
+        src/monitor/processMonitor/processMonitor.cpp
+        src/monitor/processMonitor/processMonitor.h
+        src/monitor/monitor.cpp
+        src/monitor/monitor.h
+        src/monitor/vmi.cpp
+        src/monitor/vmi.h
+        src/monitor/syscalls.cpp
+        src/monitor/syscalls.h
+        src/monitor/fileMonitor/fileMonitor.cpp
+        src/monitor/fileMonitor/fileMonitor.h
+        src/initializeTest/initialize.cpp
+        src/initializeTest/initialize.h
         src/core/config.cpp
         src/core/config.h
         src/core/logger.cpp
         src/core/logger.h
         src/core/utils.cpp
         src/core/utils.h
-
-        src/initializeTest/initialize.cpp
-        src/initializeTest/initialize.h
-
-        src/monitor/monitor.cpp
-        src/monitor/monitor.h
-        src/monitor/syscalls.cpp
-        src/monitor/syscalls.h
-        src/monitor/fileMonitor/fileMonitor.cpp
-        src/monitor/fileMonitor/fileMonitor.h
-        src/monitor/processMonitor/processMonitor.cpp
-        src/monitor/processMonitor/processMonitor.h
-
         src/detection/signatures.cpp
         src/detection/signatures.h
-
         src/response/mitigation.cpp
         src/response/mitigation.h
-        src/response/AlertServer.cpp
-        src/response/AlertServer.h
-        src/monitor/MonitorThread.cpp
-        src/monitor/MonitorThread.h
-        src/monitorui.h
-        src/monitorui.cpp
+        src/backend/ids_backend_service.cpp
+        src/backend/ids_backend_service.h
+        src/initializeTest/vm_utils.cpp
+        src/initializeTest/vm_utils.h
+        src/backend/SqliteHashDB.cpp
+        src/backend/SqliteHashDB.h
+        src/monitor/processMonitor/dumpGuestFile.cpp
 )
 
-# ==================== Compilación del ejecutable ====================
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(IDS-TFG
-            MANUAL_FINALIZATION
-            ${PROJECT_SOURCES}
-    )
-else()
-    if(ANDROID)
-        add_library(IDS-TFG SHARED ${PROJECT_SOURCES})
-    else()
-        add_executable(IDS-TFG ${PROJECT_SOURCES})
-    endif()
-endif()
-
-# ==================== Enlazado de bibliotecas ====================
-target_link_libraries(IDS-TFG PRIVATE
-        Qt${QT_VERSION_MAJOR}::Widgets
-        Qt${QT_VERSION_MAJOR}::Core
-        Qt6::Network
-        ${OPENSSL_LIBRARIES}
-        ${LIBVIRT_LIBRARIES}
-        virt-qemu
-        json-c
-        Threads::Threads
-        ${GLIB2_LIBRARIES}
-        CURL::libcurl
+# -------------------- INCLUDES DEL PROYECTO --------------------
+include_directories(
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/core
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/monitor
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/monitor/fileMonitor
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/initializeTest
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/detection
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/response
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/backend
 )
 
+# -------------------- COMPILACIÓN --------------------
+qt_add_executable(IDS-TFG
+        MANUAL_FINALIZATION
+        ${PROJECT_SOURCES}
+)
 
-# Necesario para std::filesystem en GCC <= 8
-if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-    target_link_libraries(IDS-TFG PRIVATE stdc++fs)
-endif()
-
-# Flags extra de compilación
 target_compile_options(IDS-TFG PRIVATE ${LIBVIRT_CFLAGS_OTHER})
 
-# ==================== Instalación ====================
+target_link_libraries(IDS-TFG PRIVATE
+        Qt6::Core
+        Qt6::Gui
+        Qt6::Widgets
+        Qt6::Qml
+        Qt6::Quick
+        Qt6::QuickControls2
+        ${OPENSSL_LIBRARIES}
+        ${LIBVIRT_LIBRARIES}
+        ${GLIB_LIBRARIES}
+        ${CURL_LIBRARIES}
+        virt-qemu
+        json-c
+        tinyxml2
+        SQLite::SQLite3
+)
+
 set_target_properties(IDS-TFG PROPERTIES
         MACOSX_BUNDLE TRUE
         WIN32_EXECUTABLE TRUE
 )
 
+qt_finalize_executable(IDS-TFG)
+
+# -------------------- INSTALACIÓN --------------------
 include(GNUInstallDirs)
 install(TARGETS IDS-TFG
         BUNDLE DESTINATION .
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
-
-# Finalización para Qt 6
-if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(IDS-TFG)
-endif()

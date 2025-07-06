@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/IDS-TFG_autogen"
   "IDS-TFG_autogen/include/src/ui_mainwindow.h"
   "IDS-TFG_autogen/mocs_compilation.cpp"
+  "IDS-TFG_autogen/timestamp"
 )
 
 # Per-language clean rules from dependency scanning.

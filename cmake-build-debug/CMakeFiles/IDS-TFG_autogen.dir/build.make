@@ -53,10 +53,10 @@ RM = /home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/javier/CLionProjects/IDSProject
+CMAKE_SOURCE_DIR = /root/CLionProjects/IDSProject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/javier/CLionProjects/IDSProject/cmake-build-debug
+CMAKE_BINARY_DIR = /root/CLionProjects/IDSProject/cmake-build-debug
 
 # Utility rule file for IDS-TFG_autogen.
 
@@ -66,14 +66,20 @@ include CMakeFiles/IDS-TFG_autogen.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/IDS-TFG_autogen.dir/progress.make
 
-CMakeFiles/IDS-TFG_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target IDS-TFG"
-	/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E cmake_autogen /home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles/IDS-TFG_autogen.dir/AutogenInfo.json Debug
+CMakeFiles/IDS-TFG_autogen: IDS-TFG_autogen/timestamp
+
+IDS-TFG_autogen/timestamp: /usr/lib/qt6/libexec/moc
+IDS-TFG_autogen/timestamp: /usr/lib/qt6/libexec/uic
+IDS-TFG_autogen/timestamp: CMakeFiles/IDS-TFG_autogen.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target IDS-TFG"
+	/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E cmake_autogen /root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles/IDS-TFG_autogen.dir/AutogenInfo.json Debug
+	/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E touch /root/CLionProjects/IDSProject/cmake-build-debug/IDS-TFG_autogen/timestamp
 
 CMakeFiles/IDS-TFG_autogen.dir/codegen:
 .PHONY : CMakeFiles/IDS-TFG_autogen.dir/codegen
 
 IDS-TFG_autogen: CMakeFiles/IDS-TFG_autogen
+IDS-TFG_autogen: IDS-TFG_autogen/timestamp
 IDS-TFG_autogen: CMakeFiles/IDS-TFG_autogen.dir/build.make
 .PHONY : IDS-TFG_autogen
 
@@ -86,6 +92,6 @@ CMakeFiles/IDS-TFG_autogen.dir/clean:
 .PHONY : CMakeFiles/IDS-TFG_autogen.dir/clean
 
 CMakeFiles/IDS-TFG_autogen.dir/depend:
-	cd /home/javier/CLionProjects/IDSProject/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/javier/CLionProjects/IDSProject /home/javier/CLionProjects/IDSProject /home/javier/CLionProjects/IDSProject/cmake-build-debug /home/javier/CLionProjects/IDSProject/cmake-build-debug /home/javier/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles/IDS-TFG_autogen.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /root/CLionProjects/IDSProject/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/CLionProjects/IDSProject /root/CLionProjects/IDSProject /root/CLionProjects/IDSProject/cmake-build-debug /root/CLionProjects/IDSProject/cmake-build-debug /root/CLionProjects/IDSProject/cmake-build-debug/CMakeFiles/IDS-TFG_autogen.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/IDS-TFG_autogen.dir/depend
 
