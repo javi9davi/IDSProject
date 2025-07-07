@@ -413,6 +413,12 @@
 			null
 		],
 		[
+			"/root/CLionProjects/IDSProject/src/monitor/networkMonitor/networkMonitor.h",
+			"MU",
+			"KRJLJ2NNSD/moc_networkMonitor.cpp",
+			null
+		],
+		[
 			"/root/CLionProjects/IDSProject/src/monitor/processMonitor/processMonitor.h",
 			"MU",
 			"2ET3HRZXMY/moc_processMonitor.cpp",
@@ -572,6 +578,11 @@
 			null
 		],
 		[ "/root/CLionProjects/IDSProject/src/monitor/monitor.cpp", "MU", null ],
+		[
+			"/root/CLionProjects/IDSProject/src/monitor/networkMonitor/networkMonitor.cpp",
+			"MU",
+			null
+		],
 		[
 			"/root/CLionProjects/IDSProject/src/monitor/processMonitor/dumpGuestFile.cpp",
 			"MU",

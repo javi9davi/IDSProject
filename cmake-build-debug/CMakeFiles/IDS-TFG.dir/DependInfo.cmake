@@ -23,6 +23,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/root/CLionProjects/IDSProject/src/monitor/MonitorThread.cpp" "CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o" "gcc" "CMakeFiles/IDS-TFG.dir/src/monitor/MonitorThread.cpp.o.d"
   "/root/CLionProjects/IDSProject/src/monitor/fileMonitor/fileMonitor.cpp" "CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o" "gcc" "CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o.d"
   "/root/CLionProjects/IDSProject/src/monitor/monitor.cpp" "CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o" "gcc" "CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o.d"
+  "/root/CLionProjects/IDSProject/src/monitor/networkMonitor/networkMonitor.cpp" "CMakeFiles/IDS-TFG.dir/src/monitor/networkMonitor/networkMonitor.cpp.o" "gcc" "CMakeFiles/IDS-TFG.dir/src/monitor/networkMonitor/networkMonitor.cpp.o.d"
   "/root/CLionProjects/IDSProject/src/monitor/processMonitor/dumpGuestFile.cpp" "CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.o" "gcc" "CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.o.d"
   "/root/CLionProjects/IDSProject/src/monitor/processMonitor/processMonitor.cpp" "CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o" "gcc" "CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o.d"
   "/root/CLionProjects/IDSProject/src/monitor/syscalls.cpp" "CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o" "gcc" "CMakeFiles/IDS-TFG.dir/src/monitor/syscalls.cpp.o.d"

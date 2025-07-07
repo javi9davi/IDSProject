@@ -10,6 +10,16 @@ using json = nlohmann::json;
 
 class Config {
 public:
+    static constexpr uint16_t PORT_UNSET = 0;
+
+    // Estructura de filtros de red
+    struct NetworkFilter {
+        std::string protocol;             // "tcp" o "udp", o "" para cualquiera
+        std::vector<int> ports;           // puertos exactos
+        std::pair<uint16_t,uint16_t> port_range{PORT_UNSET, PORT_UNSET};    //rango de puertos
+        std::string ip;                   // CIDR o prefijo, "" si no aplica
+    };
+
     Config();
     Config(int update_interval,
            int monitoring_interval,
@@ -17,8 +27,10 @@ public:
            bool monitor_files,
            bool monitor_processes,
            const std::vector<std::string>& files2watch,
-           std::string  hash_path,
-           std::string  guest_file_path);
+           std::string hash_path,
+           std::string guest_file_path,
+           std::string network_interface,
+           std::vector<NetworkFilter> network_filters);
 
     // Setters
     void setUpdateInterval(int interval);
@@ -29,22 +41,24 @@ public:
     void setFiles2Watch(const std::vector<std::string>& files);
     void setHashPath(const std::string& path);
     void setGuestFilePath(const std::string& path);
-
+    void setNetworkInterface(const std::string& iface);
+    void setNetworkFilters(const std::vector<NetworkFilter>& filters);
 
     // Getters
-    int getUpdateInterval()     const;
-    int getMonitoringInterval() const;
-    int getProcessInterval()    const;
-    bool isMonitorFiles()       const;
-    bool isMonitorProcesses()   const;
-    const std::vector<std::string>& getFiles2Watch() const;
-    const std::string& getHashPath()      const;
-    const std::string& getGuestFilePath() const;
-    const std::string& getNetworkInterface() const { return networkInterface; }
-    const std::string& getNetworkFilter()    const { return networkFilter; }
+    [[nodiscard]] int getUpdateInterval()     const;
+    [[nodiscard]] int getMonitoringInterval() const;
+    [[nodiscard]] int getProcessInterval()    const;
+    [[nodiscard]] bool isMonitorFiles()       const;
+    [[nodiscard]] bool isMonitorProcesses()   const;
+    [[nodiscard]] const std::vector<std::string>& getFiles2Watch() const;
+    [[nodiscard]] const std::string& getHashPath()      const;
+    [[nodiscard]] const std::string& getGuestFilePath() const;
+    [[nodiscard]] const std::string& getNetworkInterface() const;
+    [[nodiscard]] const std::vector<NetworkFilter>& getNetworkFilters() const;
 
     // Carga desde JSON
     bool loadFromFile(const std::string& filename);
+
 
 private:
     int update_interval{5};
@@ -55,8 +69,8 @@ private:
     std::vector<std::string> files2watch;
     std::string hash_path;
     std::string guest_file_path;
-    std::string networkFilter;
     std::string networkInterface{"red-central"};
+    std::vector<NetworkFilter> networkFilters;
 };
 
 #endif // CONFIG_H

@@ -31,6 +31,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/IDS-TFG.dir/src/monitor/fileMonitor/fileMonitor.cpp.o.d"
   "CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o"
   "CMakeFiles/IDS-TFG.dir/src/monitor/monitor.cpp.o.d"
+  "CMakeFiles/IDS-TFG.dir/src/monitor/networkMonitor/networkMonitor.cpp.o"
+  "CMakeFiles/IDS-TFG.dir/src/monitor/networkMonitor/networkMonitor.cpp.o.d"
   "CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.o"
   "CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/dumpGuestFile.cpp.o.d"
   "CMakeFiles/IDS-TFG.dir/src/monitor/processMonitor/processMonitor.cpp.o"

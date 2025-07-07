@@ -5,7 +5,6 @@
 #include <unordered_map>
 #include <utility>
 #include <libvirt/libvirt.h>
-
 #include "../../core/config.h"
 
 class FileMonitor {

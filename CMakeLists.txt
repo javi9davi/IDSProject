@@ -76,6 +76,8 @@ set(PROJECT_SOURCES
         src/backend/SqliteHashDB.cpp
         src/backend/SqliteHashDB.h
         src/monitor/processMonitor/dumpGuestFile.cpp
+        src/monitor/networkMonitor/networkMonitor.cpp
+        src/monitor/networkMonitor/networkMonitor.h
 )
 
 # -------------------- INCLUDES DEL PROYECTO --------------------
