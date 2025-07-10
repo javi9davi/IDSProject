@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="IDS-TFG" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="LIBVMI_DEBUG=1;LIBVMI_LOG_LEVEL=ALL " REDIRECT_INPUT="false" ELEVATE="true" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="IDS-TFG" TARGET_NAME="IDS-TFG" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="IDS-TFG" RUN_TARGET_NAME="IDS-TFG">
+    <envs>
+      <env name="-DC_INCLUDE_PATH" value="/usr/include:/usr/local/include" />
+      <env name="-DCMAKE_PREFIX_PATH:PATH" value="$PROJECT_DIR$/../Qt/6.8.1/gcc_64 " />
+      <env name="-DCPLUS_INCLUDE_PATH" value="/usr/include:/usr/local/include" />
+      <env name="-DLIBVIRT_LIBRARY:FILEPATH" value="/usr/lib64/libvirt.so" />
+      <env name="-DVIRSH_DEFAULT_CONNECT_URI" value="/usr/include/libvirt/" />
+      <env name="-DXKB_INCLUDE_DIR:PATH" value="/usr/include" />
+      <env name="-DXKB_LIBRARY:FILEPATH" value="/usr/lib64/libxkbcommon.so" />
+    </envs>
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+8b3b88712ea9217b2b7243f7dbfbe2b8 .qt_plugins/Qt6_QmlPlugins_Imports_IDS-TFG.cmake
+4cd6f8ae244a5dba585529c70d6e5486 CMakeFiles/IDS-TFG_autogen
+4cd6f8ae244a5dba585529c70d6e5486 CMakeFiles/IDS-TFG_qmlimportscan
+4f22ada13a4cf893edf21c540fccac60 IDS-TFG_autogen/timestamp

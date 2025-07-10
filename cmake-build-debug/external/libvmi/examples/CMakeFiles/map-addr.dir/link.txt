@@ -1,0 +1,1 @@
+/usr/bin/c++ -g  -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -rdynamic "CMakeFiles/map-addr.dir/map-addr_autogen/mocs_compilation.cpp.o" "CMakeFiles/map-addr.dir/map-addr.c.o" -o map-addr  -Wl,-rpath,/home/javier/CLionProjects/IDSProject/cmake-build-debug/external/libvmi/libvmi ../libvmi/libvmi.so.0.0.15 -lglib-2.0 -lz -ljson-c

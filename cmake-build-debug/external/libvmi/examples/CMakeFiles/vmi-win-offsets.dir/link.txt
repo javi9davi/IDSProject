@@ -1,0 +1,1 @@
+/usr/bin/c++ -g  -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -rdynamic "CMakeFiles/vmi-win-offsets.dir/vmi-win-offsets_autogen/mocs_compilation.cpp.o" "CMakeFiles/vmi-win-offsets.dir/win-offsets.c.o" -o vmi-win-offsets  -Wl,-rpath,/home/javier/CLionProjects/IDSProject/cmake-build-debug/external/libvmi/libvmi: ../libvmi/libvmi.so.0.0.15 -lglib-2.0 -lz -ljson-c

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="IDS-TFG"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5LinguistTools\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/javier/CLionProjects/IDSProject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IDS-TFG">
+				<Option output="/home/javier/CLionProjects/IDSProject/cmake-build-debug/IDS-TFG" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/javier/CLionProjects/IDSProject/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add directory="/home/javier/CLionProjects/IDSProject/cmake-build-debug/IDS-TFG_autogen/include"/>
+					<Add directory="/usr/include/glib-2.0"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 IDS-TFG"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IDS-TFG/fast">
+				<Option output="/home/javier/CLionProjects/IDSProject/cmake-build-debug/IDS-TFG" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/javier/CLionProjects/IDSProject/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add directory="/home/javier/CLionProjects/IDSProject/cmake-build-debug/IDS-TFG_autogen/include"/>
+					<Add directory="/usr/include/glib-2.0"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 IDS-TFG/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/javier/CLionProjects/IDSProject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/javier/CLionProjects/IDSProject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/home/javier/CLionProjects/IDSProject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/home/javier/CLionProjects/IDSProject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/home/javier/CLionProjects/IDSProject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/home/javier/CLionProjects/IDSProject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IDS-TFG_autogen">
+				<Option working_dir="/home/javier/CLionProjects/IDSProject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 IDS-TFG_autogen"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/javier/CLionProjects/IDSProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/cmake-build-debug/IDS-TFG_autogen/include/src/ui_mainwindow.h">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/cmake-build-debug/IDS-TFG_autogen/mocs_compilation.cpp">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/core/config.cpp">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/core/config.h">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/core/logger.cpp">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/core/logger.h">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/core/utils.cpp">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/core/utils.h">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/detection/signatures.cpp">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/detection/signatures.h">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/initializeTest/initialize.cpp">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/initializeTest/initialize.h">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/main.cpp">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/mainwindow.cpp">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/mainwindow.h">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/mainwindow.ui">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/monitor/MonitorThread.cpp">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/monitor/MonitorThread.h">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/monitor/fileMonitor/fileMonitor.cpp">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/monitor/fileMonitor/fileMonitor.h">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/monitor/monitor.cpp">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/monitor/monitor.h">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/monitor/processMonitor/processMonitor.cpp">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/monitor/processMonitor/processMonitor.h">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/monitor/syscalls.cpp">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/monitor/syscalls.h">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/response/alerting.cpp">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/response/alerting.h">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/response/mitigation.cpp">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/src/response/mitigation.h">
+			<Option target="IDS-TFG"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5LinguistTools/Qt5LinguistToolsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5LinguistTools\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5LinguistTools/Qt5LinguistToolsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5LinguistTools\"/>
+		</Unit>
+		<Unit filename="/home/javier/CLionProjects/IDSProject/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5LinguistTools/Qt5LinguistToolsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5LinguistTools\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

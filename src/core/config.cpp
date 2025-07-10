@@ -1,77 +1,112 @@
+// config.cpp
+#include "config.h"
 #include <iostream>
 #include <fstream>
-#include <string>
-#include "nlohmann/json.hpp"
-#include "config.h"
+#include <regex>
 
-using json = nlohmann::json;
+Config::Config() = default;
 
-// Constructor por defecto
-Config::Config()
-    : update_interval(5), monitoring_interval(10) {}
+Config::Config(const int update_interval,
+               const int monitoring_interval,
+               const int process_interval,
+               const bool monitor_files,
+               const bool monitor_processes,
+               const std::vector<std::string>& files2watch,
+               std::string hash_path,
+               std::string guest_file_path,
+               std::string network_interface,
+               std::vector<NetworkFilter> network_filters)
+    : update_interval(update_interval),
+      monitoring_interval(monitoring_interval),
+      process_interval(process_interval),
+      monitor_files(monitor_files),
+      monitor_processes(monitor_processes),
+      files2watch(files2watch),
+      hash_path(std::move(hash_path)),
+      guest_file_path(std::move(guest_file_path)),
+      networkInterface(std::move(network_interface)),
+      networkFilters(std::move(network_filters))
+{}
 
-// Constructor con parámetros
-Config::Config(const int update_interval, const int monitoring_interval, const bool monitor_files, const bool monitor_processes, std::vector<std::string>& files2watch)
-    : update_interval(update_interval), monitoring_interval(monitoring_interval),
-      monitor_files(monitor_files), monitor_processes(monitor_processes), files2watch(files2watch) {}
+// Setters
+void Config::setUpdateInterval(int i)            { update_interval     = i; }
+void Config::setMonitoringInterval(int i)        { monitoring_interval = i; }
+void Config::setProcessInterval(int i)           { process_interval    = i; }
+void Config::setMonitorFiles(bool b)             { monitor_files       = b; }
+void Config::setMonitorProcesses(bool b)         { monitor_processes   = b; }
+void Config::setFiles2Watch(const std::vector<std::string>& v) { files2watch = v; }
+void Config::setHashPath(const std::string& p)   { hash_path           = p; }
+void Config::setGuestFilePath(const std::string& p){ guest_file_path  = p; }
+void Config::setNetworkInterface(const std::string& i) { networkInterface = i; }
+void Config::setNetworkFilters(const std::vector<NetworkFilter>& f) { networkFilters = f; }
 
+// Getters
+int    Config::getUpdateInterval()     const { return update_interval; }
+int    Config::getMonitoringInterval() const { return monitoring_interval; }
+int    Config::getProcessInterval()    const { return process_interval; }
+bool   Config::isMonitorFiles()        const { return monitor_files; }
+bool   Config::isMonitorProcesses()    const { return monitor_processes; }
+const std::vector<std::string>& Config::getFiles2Watch() const { return files2watch; }
+const std::string& Config::getHashPath()      const { return hash_path; }
+const std::string& Config::getGuestFilePath() const { return guest_file_path; }
+const std::string& Config::getNetworkInterface() const { return networkInterface; }
+const std::vector<Config::NetworkFilter>& Config::getNetworkFilters() const { return networkFilters; }
 
-// Métodos `set`
-void Config::setUpdateInterval(const int interval) { update_interval = interval; }
-void Config::setMonitoringInterval(const int interval) { monitoring_interval = interval; }
-void Config::setMonitorFiles(const bool monitor) { monitor_files = monitor; }
-void Config::setMonitorProcesses(const bool monitor) { monitor_processes = monitor; }
-void Config::setFiles2Watch(const std::vector<std::string>& files) { files2watch = files; }
-void Config::setHashPath(const std::string &path) { hash_path = path; }
-
-
-
-// Métodos `get`
-int Config::getUpdateInterval() const { return update_interval; }
-int Config::getMonitoringInterval() const { return monitoring_interval; }
-std::vector<std::string> Config::getFiles2Watch() const { return files2watch; }
-const std::string &Config::getHashPath() const { return hash_path; }
-
-
-
-bool Config::isMonitorFiles() const { return monitor_files; }
-bool Config::isMonitorProcesses() const { return monitor_processes; }
-
-// Método para cargar la configuración desde un archivo JSON
 bool Config::loadFromFile(const std::string& filename) {
-    std::ifstream configFile(filename);
-
-    if (!configFile) {
-        std::cerr << "Error al abrir el archivo de configuración: " << filename << std::endl;
+    std::ifstream in(filename);
+    if (!in.is_open()) {
+        std::cerr << "[ERROR] No se pudo abrir config: " << filename << "\n";
         return false;
     }
 
-    json configJson;
-    configFile >> configJson;
+    json j;
+    in >> j;
 
-    if (configJson.contains("General")) {
-        if (configJson["General"].contains("Update_Interval")) {
-            setUpdateInterval(configJson["General"]["Update_Interval"].get<int>());
-        }
+    // General
+    if (j.contains("General")) {
+        auto& g = j["General"];
+        if (g.contains("Update_Interval"))
+            update_interval = g["Update_Interval"].get<int>();
     }
 
-    if (configJson.contains("Monitoring")) {
-        if (configJson["Monitoring"].contains("Monitor_Processes")) {
-            setMonitorProcesses(configJson["Monitoring"]["Monitor_Processes"].get<bool>());
-            setMonitoringInterval(isMonitorProcesses() ? 5 : 10);
-        }
-        if (configJson["Monitoring"].contains("Monitor_Files")) {
-            setMonitorFiles(configJson["Monitoring"]["Monitor_Files"].get<bool>());
-        }
-        if (configJson["Monitoring"].contains("Files2Watch")) {
-            std::vector<std::string> files = configJson["Monitoring"]["Files2Watch"].get<std::vector<std::string>>();
-            setFiles2Watch(files);
-        }
-        if (configJson["Monitoring"].contains("Hash_Path")) {
-            setHashPath(configJson["Monitoring"]["Hash_Path"].get<std::string>());
-        }
+    // Monitoring
+    if (j.contains("Monitoring")) {
+        auto& m = j["Monitoring"];
+        if (m.contains("Monitor_Processes"))
+            monitor_processes = m["Monitor_Processes"].get<bool>();
+        if (m.contains("Process_Interval"))
+            process_interval = m["Process_Interval"].get<int>();
+        if (m.contains("Monitor_Files"))
+            monitor_files = m["Monitor_Files"].get<bool>();
+        if (m.contains("Files2Watch"))
+            files2watch = m["Files2Watch"].get<std::vector<std::string>>();
+        if (m.contains("Hash_Path"))
+            hash_path = m["Hash_Path"].get<std::string>();
+        if (m.contains("Guest_File_Path"))
+            guest_file_path = m["Guest_File_Path"].get<std::string>();
     }
 
+    // Network
+    if (j.contains("Network")) {
+        auto& n = j["Network"];
+        if (n.contains("Interface"))
+            networkInterface = n["Interface"].get<std::string>();
+        if (n.contains("Filters") && n["Filters"].is_array()) {
+            networkFilters.clear();
+            for (auto& f : n["Filters"]) {
+                NetworkFilter nf;
+                nf.protocol = f.value("protocol", "");
+                if (f.contains("ports"))
+                    nf.ports = f["ports"].get<std::vector<int>>();
+                if (f.contains("port_range") && f["port_range"].is_array()) {
+                    nf.port_range.first  = f["port_range"][0].get<int>();
+                    nf.port_range.second = f["port_range"][1].get<int>();
+                }
+                nf.ip = f.value("ip", "");
+                networkFilters.push_back(nf);
+            }
+        }
+    }
 
     return true;
 }

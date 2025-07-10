@@ -327,3 +327,13 @@ bool FileMonitor::hasFileChanged() {
 bool FileMonitor::isHashStored(const std::string& file_path) {
     return file_hashes.find(file_path) != file_hashes.end();
 }
+
+bool FileMonitor::requiresInitialization() const {
+    for (const auto& path : config.getFiles2Watch()) {
+        if (file_hashes.find(path) == file_hashes.end()) {
+            return true;
+        }
+    }
+    return false;
+}
+

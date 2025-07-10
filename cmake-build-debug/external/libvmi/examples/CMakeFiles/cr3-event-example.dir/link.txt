@@ -1,0 +1,1 @@
+/usr/bin/c++ -g  -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -rdynamic "CMakeFiles/cr3-event-example.dir/cr3-event-example_autogen/mocs_compilation.cpp.o" "CMakeFiles/cr3-event-example.dir/cr3-event-example.c.o" -o cr3-event-example  -Wl,-rpath,/home/javier/CLionProjects/IDSProject/cmake-build-debug/external/libvmi/libvmi ../libvmi/libvmi.so.0.0.15 -lglib-2.0 -lz -ljson-c

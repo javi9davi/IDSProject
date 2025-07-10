@@ -1,0 +1,302 @@
+{
+	"BUILD_DIR" : "/home/javier/CLionProjects/IDSProject/cmake-build-debug/external/libvmi/libvmi/vmi_autogen",
+	"CMAKE_BINARY_DIR" : "/home/javier/CLionProjects/IDSProject/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/javier/CLionProjects/IDSProject/cmake-build-debug/external/libvmi/libvmi",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi",
+	"CMAKE_EXECUTABLE" : "/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/CMakeLists.txt",
+		"/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindFLEX.cmake",
+		"/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake",
+		"/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindPackageMessage.cmake",
+		"/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindBISON.cmake",
+		"/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake",
+		"/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindPackageMessage.cmake",
+		"/home/javier/CLionProjects/IDSProject/external/libvmi/cmake/modules/FindLibvirt.cmake",
+		"/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake",
+		"/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindPackageMessage.cmake",
+		"/home/javier/CLionProjects/IDSProject/external/libvmi/cmake/modules/FindJSON-C.cmake",
+		"/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindPkgConfig.cmake",
+		"/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake",
+		"/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindPackageMessage.cmake",
+		"/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake",
+		"/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindPackageMessage.cmake",
+		"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/libtool_template.in",
+		"/home/javier/CLionProjects/IDSProject/cmake-build-debug/external/libvmi/libvmi/libtool_template.gen"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/javier/CLionProjects/IDSProject",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/arch/amd64.h",
+			"MU",
+			"KLIEESQHYK/moc_amd64.cpp",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/arch/arch_interface.h",
+			"MU",
+			"KLIEESQHYK/moc_arch_interface.cpp",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/arch/arm_aarch32.h",
+			"MU",
+			"KLIEESQHYK/moc_arm_aarch32.cpp",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/arch/arm_aarch64.h",
+			"MU",
+			"KLIEESQHYK/moc_arm_aarch64.cpp",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/arch/ept.h",
+			"MU",
+			"KLIEESQHYK/moc_ept.cpp",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/arch/intel.h",
+			"MU",
+			"KLIEESQHYK/moc_intel.cpp",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/disk/vbd.h",
+			"MU",
+			"QHAT5RAHOG/moc_vbd.cpp",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/driver/driver_interface.h",
+			"MU",
+			"LSSUX4W7A7/moc_driver_interface.cpp",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/driver/memory_cache.h",
+			"MU",
+			"LSSUX4W7A7/moc_memory_cache.cpp",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/events.h",
+			"MU",
+			"EWIEGA46WW/moc_events.cpp",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/msr-index.h",
+			"MU",
+			"EWIEGA46WW/moc_msr-index.cpp",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/os/os_interface.h",
+			"MU",
+			"A6UP3WFRNH/moc_os_interface.cpp",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/slat.h",
+			"MU",
+			"EWIEGA46WW/moc_slat.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/javier/CLionProjects/IDSProject/cmake-build-debug/external/libvmi/libvmi/vmi_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/javier/CLionProjects/IDSProject/cmake-build-debug/external/libvmi/libvmi/vmi_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "HAVE_CONFIG_H", "HAVE_ZLIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/usr/include/glib-2.0",
+		"/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+		"/home/javier/CLionProjects/IDSProject/external/libvmi",
+		"/home/javier/CLionProjects/IDSProject/cmake-build-debug/external/libvmi",
+		"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi",
+		"/usr/include",
+		"/usr/include/c++/7",
+		"/usr/include/x86_64-linux-gnu/c++/7",
+		"/usr/include/c++/7/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/7/include",
+		"/usr/local/include",
+		"/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed",
+		"/usr/include/x86_64-linux-gnu"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-std=gnu++1z",
+		"-dM",
+		"-E",
+		"-c",
+		"/home/javier/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/javier/CLionProjects/IDSProject/cmake-build-debug/external/libvmi/libvmi/vmi_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 6,
+	"PARSE_CACHE_FILE" : "/home/javier/CLionProjects/IDSProject/cmake-build-debug/external/libvmi/libvmi/CMakeFiles/vmi_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 9,
+	"SETTINGS_FILE" : "/home/javier/CLionProjects/IDSProject/cmake-build-debug/external/libvmi/libvmi/CMakeFiles/vmi_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/accessors.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/arch/amd64.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/arch/arch_interface.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/arch/arm_aarch32.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/arch/arm_aarch64.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/arch/ept.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/arch/intel.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/convenience.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/core.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/disk/vbd.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/driver/driver_interface.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/driver/memory_cache.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/events.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/msr-index.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/os/os_interface.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/os/windows/core.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/os/windows/kdbg.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/os/windows/memory.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/os/windows/peparse.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/os/windows/process.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/os/windows/unicode.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/pretty_print.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/read.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/slat.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/strmatch.c",
+			"MU",
+			null
+		],
+		[
+			"/home/javier/CLionProjects/IDSProject/external/libvmi/libvmi/write.c",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}
