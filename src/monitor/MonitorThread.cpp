@@ -128,6 +128,7 @@ void MonitorThread::run() const
     // Clean up
     if (fileThread.joinable()) fileThread.join();
     if (processThread.joinable()) processThread.join();
+    if (networkThread.joinable()) networkThread.join();
 }
 
 void MonitorThread::stop()

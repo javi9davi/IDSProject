@@ -3,6 +3,8 @@
 #include <filesystem>
 #include <fstream>
 
+#include "networkMonitor/networkMonitor.h"
+
 namespace fs = std::filesystem;
 
 // Función para cargar un archivo .env como mapa clave/valor
@@ -91,6 +93,10 @@ void MonitorUI::updateVMs() {
             auto fileMonitor = std::make_shared<FileMonitor>(config, vmName, conn);
             auto processMonitor = std::make_shared<ProcessMonitor>(vmName, conn);
             auto monitorThread = std::make_shared<MonitorThread>(vmName, conn, fileMonitor, processMonitor, config);
+            auto networkMonitor = std::make_shared<NetworkMonitor>(config, true);
+            threads.emplace_back([networkMonitor, vmName]() {
+                networkMonitor->run(vmName);
+            });
             threads.emplace_back(&MonitorThread::run, monitorThread);
             monitors[vmName] = monitorThread;
 
